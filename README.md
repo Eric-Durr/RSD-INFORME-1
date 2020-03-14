@@ -1,7 +1,7 @@
 # INFORME DE PRACTICAS: REDES
 
 Informe de Practicas realizadas por:
-* Eric Dürr Sierra (alu________@ull.edu.es)
+* Eric Dürr Sierra (alu0101027005@ull.edu.es)
 * Noah Sanchez Geurts (alu0101134956@ull.edu.es)
 
 - Enlace al repositorio de GitHub (RSD-INFORME-1): https://github.com/EricDS-INFO/RSD-INFORME-1

@@ -8,7 +8,7 @@ Informe de Practicas realizadas por:
 
 # Indice de Practicas
 
-1. Analisis de Protocolos: **Ethernet y ARP**
-2. Analisis de Protocolos: **IP y ICMP**
-3. Analisis de Protocolos: **UDP y TCP**
-4. Analisis de Protocolos: **HTTP**
+1. Analisis de Protocolos: [**Ethernet y ARP**](eth-arp.md)
+2. Analisis de Protocolos: [**IP y ICMP**](ip-icmp.md)
+3. Analisis de Protocolos: [**UDP y TCP**](udp-tcp.md)
+4. Analisis de Protocolos: [**HTTP**](http.md)

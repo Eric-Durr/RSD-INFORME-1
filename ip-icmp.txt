@@ -72,7 +72,40 @@ PREGUNTAs PASO 1 ( Estudio de los mensajes ICMP asociados al comando ping)
   3 - Examine uno de los paquetes echo request emitidos por su ordenador. ¿Cuál es el código y el tipo?
       ¿Qué otros campos tienen paquetes ICMP de este tipo? ¿Cuántos bytes ocupan la suma de comprobación
       (checksum), el numero de secuencia y el identificador?
-       
+
+      Este paquete corresponde a uno de los distintos tipos de paquete del protocolo ICMP. En concreto el
+      tipo de un mensaje de control Echo request es el 8 (0x08). Este tipo de código se localiza en el primer
+      byte de la cabecera ICMP, el siguiente corresponde al código al que hace alusión el enunciado.
+
+      Los siguientes 16 bits (los octetos 3 y 4) corresponde al checksum (suma de comprobación) empleado en la
+      detección de errores. Los últimos 4 bytes varían según el tipo del código ICMP.
+
+      El código junto al tipo expresa el subtipo. En este caso es 0, dado que por definición debe ser así cuando 
+      se trata de un tipo Echo request.
+
+      En el caso de un Echo request los bytes 5 y 6 son ocupados por el identificador y el número de secuencia
+      consecutivamente. finalmente los últimos 4 bytes ocupan los datos del mensaje.
+
+      Respecto a los campos de los paquetes ICMP son los siguientes:
+        -------- TIPO ( 1 byte ) --------
+        - type -> 8 por Echo request
+        -------- CÓDIGO ( 1 byte ) --------
+        - code -> 0 por Echo request
+        -------- SUMA DE COMPROBACIÓN ( 2 bytes ) --------
+        - checksum -> [número] [correcto/fallido]
+        + estatus de comprobación
+        -------- IDENTIFICADOR ( 2 bytes ) --------
+        - Identifyer (BE) [numero] parte 1
+        - Identifyer (LE) [numero] parte 2
+        -------- NUMERO DE SECUENCIA ( 2 bytes ) --------
+        - Sequence num (BE) [numero] parte 1
+        - Sequence num (LE) [numero] parte 2
+        + marco de respuesta
+        -------- SECCIÓN DE DATOS ( 4 bytes ) --------
+        - Timestamp from icmp data: datos de la estampa de tiempo (fecha)
+        + tiempo necesitado
+        - Data (datos de relleno)
+
 
 
 PREGUNTAS DEL PROTOCOLO ICP

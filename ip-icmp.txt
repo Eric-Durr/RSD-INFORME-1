@@ -1,0 +1,51 @@
+----- DOCUMENTO DE RESPUESTAS PARA LA P2 -----
+
+RESUMEN:
+    obj: conocer estructura de paquete IP y campos de cabecera, fragmentación ipv4, utilidad y necesidad de ICMP, comandos ping y traceroute
+
+    Protocolo IP:   
+                    - mover datagramas entre un conjunto de redes interconectadas, pasándolos de un módulo a otro hasta el destino.
+                    - los módulos residen en hosts y pasarelas en internet.
+                    - se encaminan a través de redes individualesmediante la interpretación de una dirección internet <- importancia de un mecanismo.
+                    - en el enrutamiento entre módulos los datagramas pueden necesitar atravesar una red de menor tamaño 
+                      máximo de paquete -> mecanismo de fragmentación.
+                    - para que funcione bien se requiere añadir una cabecera IP a cada datagrama enviado.
+                    - la cabecera contiene toda la información necesaria para que hosts y routers puedan encaminarlos a sus 
+                      destinos y fragmentarlos cuando sea necesario.
+    Protocolo ICMP: 
+                    - Es un protocolo de mensajes de control de internet (ICMP) 
+                    - usa el soporte básico de IP como un protocolo de nivel superior (es una parte de IP realmente)
+                    - se envían cuando:
+                                        · un datagrama no puede alcanzar su destino.
+                                        · una pasarela no dispone de almacenamiento temporal. 
+                                        · cuando la pasarela puede dirigir al host para emitir por una ruta más corta
+                    - IP no fue diseñado para ser 100% fiable -> ICMP no lo convierte en fiable.
+                    - el propósito de ICMP tiene como propósito suministrar información sobre los problemas del entorno.
+                    - Los protocolos superiores a IP deben implementar sus propias soluciones de fiabilidad.
+
+    Comando ping: 
+                    - Utiliza el protocolo ICMP -> envía una petición de eco a un host o router.
+                    - al emitir echo request se recibe un echo response -> estos datagramas se componen por:
+                        · (cabecera IP) + (cabecera ICMP) + (carga util: estampa de tiempo y numero de bytes de relleno)
+                    - con el mecanismo se pretende averiguar si el nodo destino es alcanzable +  tiempo de ida y vuelta.
+                    
+    Comando traceroute:
+                    - determinar el recorrido entre dos hosts -- usa --> campo TTL de la cabecera IP
+                    - un paquete podría quedar vagando infinitamente por la red --> debe existir un mecanismo que detecte esto.
+                    - El campo TTL asigna un valor por defecto (64) en el emisor, dicho valor decrementa al cruzar un router.
+                    - si el valor llega a 0 el paquete es descartado y se envía un mensaje ICMP (TTL exceeded) al emisor.
+                    - Traceroute construye un paquete para emitirlo entre dos hosts -> TTL toma el valor 1 en este caso.
+                    - Vuelve al emisor tras devolverlo el primer router -> ahora se emite con  TTL valor 2 (causando otro mensaje ICMP)
+                    - El proceso sigue hasta alcanzar el destino -> all llegar toma la carga util y la interpreta:
+                            
+                            · Carga útil como mensaje ICMP "Echo request" -> se responde con Echo reply.
+                            · Carga útil como datagrama UDP a un puerto aleatorio -> se responde con Destination unreachable (ICMP)
+                            · Carga útil como segmento TCP a un puerto aleatorio +  flag de sincronización activo -> Destination unreachable (ICMP) 
+
+                            (cuando el host emisor recibe el mensaje se termina la traza y se finaliza el proceso)
+
+
+PREGUNTAS DEL PROTOCOLO IP
+
+
+PREGUNTAS DEL PROTOCOLO ICP

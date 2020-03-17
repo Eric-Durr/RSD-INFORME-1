@@ -45,7 +45,34 @@ RESUMEN:
                             (cuando el host emisor recibe el mensaje se termina la traza y se finaliza el proceso)
 
 
-PREGUNTAS DEL PROTOCOLO IP
+PREGUNTAs PASO 1 ( Estudio de los mensajes ICMP asociados al comando ping)
+
+
+ 1 - ¿Cuál es la dirección IP de su ordenador? ¿Cuál es la dirección IP del nodo destino?
+
+  La dirección IP de mi ordenador, en este caso, corresponde al extremo emisor de la comunicación 
+  o host origen, su valor es aquél que indica el campo "Source" de wireshark 192.186.1.87. 
+
+  Por otro lado el nodo destino recibe la dirección IP del extremo receptor de la comunicación ante un mensaje Echo request
+  de ICMP. Este valor se puede comprobar en el campo "Destination" de wireshark 216.58.211.227.
+
+  Al emitir una Echo reply los campos de Destination y Source son intercambiados, tal y como la lógica de la emisión-recepción
+  de mensajes indica.
+
+
+  2 - ¿Por qué un paquete ICMP no tiene un numero de destino y de origen?
+       
+    Esto puede explicarse por la definición del propósito del propio protocolo. Dado que este no toma la responsabilidad de emitir
+    ni recibir paquetes, solo de informar de errores, se abstrae de las direcciones de destino y origen. Difiere de esta manera de 
+    los protocolos de la capa de enlace (como TCP y UDP), es un protocolo complementario a IP que cubre la necesidad de informar 
+    ante distintas situaciones de la comunicación. ping y traceroute son una excepción al uso de aplicaciones de usuario de este 
+    protocolo.
+
+
+  3 - Examine uno de los paquetes echo request emitidos por su ordenador. ¿Cuál es el código y el tipo?
+      ¿Qué otros campos tienen paquetes ICMP de este tipo? ¿Cuántos bytes ocupan la suma de comprobación
+      (checksum), el numero de secuencia y el identificador?
+       
 
 
 PREGUNTAS DEL PROTOCOLO ICP

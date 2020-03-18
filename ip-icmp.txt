@@ -180,16 +180,26 @@ PREGUNTAs PASO 3 ( Estudio de la cabecera IP y la fragmentación)
     1 - Seleccione el primer mensaje paquete por el programa traceroute desde su ordenador
         y expanda la información relativa al protocolo IP.  
         ¿Cuál es la dirección IP de su ordenador?
-
+        La dirección IP de mi ordenador, que es la de la fuente, es 192.168.1.1
 
     2 - En la cabecera de paquete, ¿Cuál es el valor del campo protocolo de nivel superior?
-
+        El valor es 1, que corresponde a ICMP
 
     3 - ¿Cuántos bytes hay en la cabecera IP? ¿Cuántos bytes hay en el payload del datagrama IP?
         Explique cómo determinó el numero de bytes del payload (carga útil).
+        
+        según el wireshark, el paquete capturado tiene una cabecera de 20 bytes, tal y como lo 
+        muestra el campo IHL. Por otro lado el datagrama IP ocupa 64 bytes, ya que la longitud
+        total, tal y como indica el campo Total Length, es 84 incluyendo la cabecera. Si se
+        restan los 20 de cabecera, se obtiene la longitud del payload.
 
 
     4 - ¿Se ha segmentado este datagrama? Explique como determinó la respuesta.
+
+        No, el datagrama no se ha fragmentado. Esta información viene dada por el campo de flags
+        de la cabecera IP. No solamente se indica que no se fragmenta (Don't fragment: Set), si 
+        no que tampoco existe un offset de fragmento, por lo que al no haber desplazamiento no hay
+        fragmentación.
 
 
     5 - Observe cómo en cada paquete enviado el campo de identificación es distinto.
@@ -203,6 +213,8 @@ PREGUNTAs PASO 3 ( Estudio de la cabecera IP y la fragmentación)
         en el que aparecen las direcciones IP de los routers en la salida del comando
         traceroute.
 
+        El valor del campo de identificación del primer paquete es 0x98ef. El patrón 
+        observado es que por cada paquete se incrementa una unidad el identificador
 
   · Fragmentación de paquetes IP.  
 
@@ -210,22 +222,55 @@ PREGUNTAs PASO 3 ( Estudio de la cabecera IP y la fragmentación)
     7 - Encuentre el primer UDP enviado por traceroute después de cambiar el tamaño de
         paquete a 2000 ¿se ha fragmentado este mensaje en más de un datagrama IP?
 
+        Si se ha fragmentado, en dos paquetes contiguos, uno de 1500 Bytes y otro de 
+        500 bytes
+
+        No se ha fragmentado ¿?
 
     8 - Revise el primer fragmento. ¿Qué parte de la cabecera indica que el datagrama 
         ha sido fragmentado? ¿Qué información en la cabecera distingue al primer 
         fragmento de los fragmentos siguientes? ¿Qué tamaño tiene este datagrama IP?  
 
+        La parte de la cabecera que indica que el datagrama se ha fragmentado es la 
+        parte de flags, el flag "Don't fragment" tiene valor "set" y la propia parte 
+        de la cabecera indica que hay más fragmentos. 
+
+       
+
+
 
     9 - Revise el segundo fragmento ¿Qué información en la cabecera indica que no es el
         primer fragmento? ¿Hay más fragmentos? ¿Cómo lo sabe? 
+
+        La información que revela que no es el primer fragmento es su offset, ya que este 
+        indica cuan separado está del primer fragmento. si fuera el primero tendría un 
+        offset 0.
+
+        No, no hay más fragmentos para ese paquete, porque el segundo fragmento no está
+        fragmentado tal y como lo indica la sección de flag de la cabecera.
 
     10 - ¿Qué campos de la cabecera IP cambian entre el primer y el segundo fragmento?
          Observe los campos de identificación de amdos fragmentos. Fíjese también en
          los flags.
 
+        El primer fragmento se ditingue en la cabecera por el tamaño total del datagrama,
+        que es mayor. Además de que el flag indica que está fragmentado y que no tiene un
+        ofset, ya que esta característica es tomada por el fragmento siguiente. Por el 
+        resto de apartados son idénticos. Este datagrama IP tiene un tamaño de 1500 bytes
 
     11 - ¿Cuántos fragmentos se crearon a partir del datagrama original?
 
+          Se crearon tres fragmentos a partir del datagrama original
 
     12 - ¿Qué diferencias hay en la cabecera IP de los distintos fragmentos? Observe
          los campos de identificación de ambos fragmentos. Fíjese también en los flags.    
+
+         Las diferencias entre los tres fragmentos se pueden resumir a que tanto el
+         primero como el segundo tienen el flag de "More fragments" con valor set, 
+         sin embargo el tercero, al no fragmentarle tiene valor Not set. Por otro 
+         lado el valor del Fragment offset varía. El primer fragmento tiene un offset 
+         de 0 ya que se hace a partir de este, consecutivamente el segundo y el 
+         tercero aumentan su offset conforme se alejan del primero. Además, como es 
+         obvio la longitud total varía para adecuarse a los 1500 que caben por la 
+         banda, el primer y segundo fragmento presentan un Total length de 1500, 
+         mientras que el tercero tiene un valor de 500.

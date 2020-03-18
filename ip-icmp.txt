@@ -107,5 +107,32 @@ PREGUNTAs PASO 1 ( Estudio de los mensajes ICMP asociados al comando ping)
         - Data (datos de relleno)
 
 
+    4 - Examine uno de los paquetes Echo reply. ¿Cuál es el código y el tipo ?¿Qué otros campos tienen los paquetes ICMP de este tipo?
+        ¿Cuántos bytes ocupan la suma de comprobación, el número de secuencia y el identificador?
 
-PREGUNTAS DEL PROTOCOLO ICP
+        Este apartado extiende la explicación dada en la pregunta 3.
+
+        Respecto a los campos de los paquetes ICMP son los siguientes:
+          -------- TIPO ( 1 byte ) --------
+          - type -> 0 por Echo reply
+          -------- CÓDIGO ( 1 byte ) --------
+          - code -> 0 por Echo reply
+          -------- SUMA DE COMPROBACIÓN ( 2 bytes ) --------
+          - checksum -> [número] [correcto/fallido]
+          + estatus de comprobación
+          -------- IDENTIFICADOR ( 2 bytes ) --------
+          - Identifyer (BE) [numero] parte 1
+          - Identifyer (LE) [numero] parte 2
+          -------- NUMERO DE SECUENCIA ( 2 bytes ) --------
+          - Sequence num (BE) [numero] parte 1
+          - Sequence num (LE) [numero] parte 2
+          + marco de respuesta
+          -------- SECCIÓN DE DATOS ( 4 bytes ) --------
+          - Timestamp from icmp data: datos de la estampa de tiempo (fecha)
+          + tiempo necesitado
+          - Data (datos de relleno)
+
+
+PREGUNTAs PASO 2 ( Estudio de los mensajes ICMP asociados al comando traceroute)
+
+

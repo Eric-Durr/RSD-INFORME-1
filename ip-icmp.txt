@@ -48,16 +48,16 @@ RESUMEN:
 PREGUNTAs PASO 1 ( Estudio de los mensajes ICMP asociados al comando ping)
 
 
- 1 - ¿Cuál es la dirección IP de su ordenador? ¿Cuál es la dirección IP del nodo destino?
+  1 - ¿Cuál es la dirección IP de su ordenador? ¿Cuál es la dirección IP del nodo destino?
 
-  La dirección IP de mi ordenador, en este caso, corresponde al extremo emisor de la comunicación 
-  o host origen, su valor es aquél que indica el campo "Source" de wireshark 192.186.1.87. 
+    La dirección IP de mi ordenador, en este caso, corresponde al extremo emisor de la comunicación 
+    o host origen, su valor es aquél que indica el campo "Source" de wireshark 192.186.1.87. 
 
-  Por otro lado el nodo destino recibe la dirección IP del extremo receptor de la comunicación ante un mensaje Echo request
-  de ICMP. Este valor se puede comprobar en el campo "Destination" de wireshark 216.58.211.227.
+    Por otro lado el nodo destino recibe la dirección IP del extremo receptor de la comunicación ante un mensaje Echo request
+    de ICMP. Este valor se puede comprobar en el campo "Destination" de wireshark 216.58.211.227.
 
-  Al emitir una Echo reply los campos de Destination y Source son intercambiados, tal y como la lógica de la emisión-recepción
-  de mensajes indica.
+    Al emitir una Echo reply los campos de Destination y Source son intercambiados, tal y como la lógica de la emisión-recepción
+    de mensajes indica.
 
 
   2 - ¿Por qué un paquete ICMP no tiene un numero de destino y de origen?
@@ -136,3 +136,96 @@ PREGUNTAs PASO 1 ( Estudio de los mensajes ICMP asociados al comando ping)
 PREGUNTAs PASO 2 ( Estudio de los mensajes ICMP asociados al comando traceroute)
 
 
+  1 - ¿Cuál es la dirección IP de su nodo? ¿Y la del nodo destino?
+      
+      La dirección IP de mi nodo, que es el host emisor, va cambiando en función del TTL
+      ya que va alcanzando un extremo distinto según incrementa el valor del TTL.
+      Por otro lado la del nodo destino 192.168.1.87.
+  
+
+  2 - Explique la utilidad que tiene el campo TTL de la cabecera IP. 
+      El campo TTL nos permite definir un número máximo de nodos por el que navegar, evitando
+      así que el paquete quede sin rumbo y de manera infinita rondando por internet. 
+      Esto ocuparía todo el ancho de banda.
+  
+
+  3 - ¿Cuál es el contenido de los paquetes enviados por traceroute? Examine la cabecera IP
+      de estos paquetes. ¿Cuál es el valor del campo de protocolo? ¿Por qué?
+
+      El valor del campo de protocolo es el ICMP,  ya que el comando traceroute provoca que el TTL
+      vaya llegando al valor 0 según alcanza los distintos router que intermedian la red para trazar
+      la ruta que hay entre el host emisor y el destino. Cuando el TTL alcanza el valor 0, se emite
+      un mensaje ICMP TTL exceeded hasta alcanzar el destino, donde el mensaje ICMP 
+      cambia a Port unreachable.
+
+      Cabe destacar que en la sección de datso hay escrito "SU PERMAN".
+
+  4 - Examine los mensajes ICMP devueltos por los routers. ¿Qué información nueva se incluye en estos paquetes?
+
+        Se incluye el tiempo de respuesta
+
+  5 - Examine los paquetes ICMP recibidos desde el nodo final al que hacemostraceroute. ¿En que difieren estos
+      paquetes de los mensajes devueltos por los routers? ¿Por qué son diferentes?
+
+        Los paquetes recibidos desde el nodo final difieren en el tipo de mensaje ICMP, siendo estos de 
+        Destination unreachable, ya que hemos alcanzado el nodo destino pero no podemos acceder al puerto
+        solicitado.
+
+PREGUNTAs PASO 3 ( Estudio de la cabecera IP y la fragmentación)
+
+  
+  · Aspectos relacionados con la cabecera IP
+
+
+    1 - Seleccione el primer mensaje paquete por el programa traceroute desde su ordenador
+        y expanda la información relativa al protocolo IP.  
+        ¿Cuál es la dirección IP de su ordenador?
+
+
+    2 - En la cabecera de paquete, ¿Cuál es el valor del campo protocolo de nivel superior?
+
+
+    3 - ¿Cuántos bytes hay en la cabecera IP? ¿Cuántos bytes hay en el payload del datagrama IP?
+        Explique cómo determinó el numero de bytes del payload (carga útil).
+
+
+    4 - ¿Se ha segmentado este datagrama? Explique como determinó la respuesta.
+
+
+    5 - Observe cómo en cada paquete enviado el campo de identificación es distinto.
+
+        Con los paquetes ordenados por dirección de origen encuentre las respuestas 
+        ICMP, de TTL excedido, recibidas por su ordenador.
+
+
+    6 - ¿Cuál es el valor en el campo de identificación y del TTL? ¿Cuál es el patrón
+        que se observa? Compruebe si el valor del TTL está relacionado con el orden  
+        en el que aparecen las direcciones IP de los routers en la salida del comando
+        traceroute.
+
+
+  · Fragmentación de paquetes IP.  
+
+
+    7 - Encuentre el primer UDP enviado por traceroute después de cambiar el tamaño de
+        paquete a 2000 ¿se ha fragmentado este mensaje en más de un datagrama IP?
+
+
+    8 - Revise el primer fragmento. ¿Qué parte de la cabecera indica que el datagrama 
+        ha sido fragmentado? ¿Qué información en la cabecera distingue al primer 
+        fragmento de los fragmentos siguientes? ¿Qué tamaño tiene este datagrama IP?  
+
+
+    9 - Revise el segundo fragmento ¿Qué información en la cabecera indica que no es el
+        primer fragmento? ¿Hay más fragmentos? ¿Cómo lo sabe? 
+
+    10 - ¿Qué campos de la cabecera IP cambian entre el primer y el segundo fragmento?
+         Observe los campos de identificación de amdos fragmentos. Fíjese también en
+         los flags.
+
+
+    11 - ¿Cuántos fragmentos se crearon a partir del datagrama original?
+
+
+    12 - ¿Qué diferencias hay en la cabecera IP de los distintos fragmentos? Observe
+         los campos de identificación de ambos fragmentos. Fíjese también en los flags.    

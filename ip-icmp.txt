@@ -180,25 +180,25 @@ PREGUNTAs PASO 3 ( Estudio de la cabecera IP y la fragmentación)
     1 - Seleccione el primer mensaje paquete por el programa traceroute desde su ordenador
         y expanda la información relativa al protocolo IP.  
         ¿Cuál es la dirección IP de su ordenador?
-        La dirección IP de mi ordenador, que es la de la fuente, es 192.168.1.1
+        La dirección IP de mi ordenador, que es la de la fuente, es 192.168.1.87
 
     2 - En la cabecera de paquete, ¿Cuál es el valor del campo protocolo de nivel superior?
-        El valor es 1, que corresponde a ICMP
+        El valor del protocolo superior es 17 que corresponde al protocolo UDP
 
     3 - ¿Cuántos bytes hay en la cabecera IP? ¿Cuántos bytes hay en el payload del datagrama IP?
         Explique cómo determinó el numero de bytes del payload (carga útil).
         
         según el wireshark, el paquete capturado tiene una cabecera de 20 bytes, tal y como lo 
-        muestra el campo IHL. Por otro lado el datagrama IP ocupa 64 bytes, ya que la longitud
-        total, tal y como indica el campo Total Length, es 84 incluyendo la cabecera. Si se
+        muestra el campo IHL. Por otro lado el datagrama IP ocupa 30 bytes, ya que la longitud
+        total, tal y como indica el campo Total Length, es 50 incluyendo la cabecera. Si se
         restan los 20 de cabecera, se obtiene la longitud del payload.
 
 
     4 - ¿Se ha segmentado este datagrama? Explique como determinó la respuesta.
 
         No, el datagrama no se ha fragmentado. Esta información viene dada por el campo de flags
-        de la cabecera IP. No solamente se indica que no se fragmenta (Don't fragment: Set), si 
-        no que tampoco existe un offset de fragmento, por lo que al no haber desplazamiento no hay
+        de la cabecera IP. No solamente se indica que no se fragmenta (More fragments: not set), 
+        tampoco existe un offset de fragmento, por lo que al no haber desplazamiento no hay
         fragmentación.
 
 

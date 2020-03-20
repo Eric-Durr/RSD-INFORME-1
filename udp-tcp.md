@@ -73,8 +73,25 @@ PREGUNTAS DE ELEMENTOS BÁSICOS DE LA CABECERA UDP
         Lo que sucede con los puertos de la pareja de paquetes que se comunican es que se han intercambiado. La relación es inversa.
 
 
-PREGUNTAS DE CAPTURA DE TRÁFICO TCP
-
 PREGUNTAS DE INICIO Y CIERRE DE CONEXIÓN EN TCP
+
+    1 - ¿Cuál es el número de secuencia del segmento TCP SYN que se utiliza para 
+        iniciar la conexión entre el cliente y el servidor? Consulte las secciones 1 y 3 del RFC 6528 y averigüe como se establecen los números de secuencia iniciales en TCP y por qué.
+
+    El número de secuencia del segmento TCP que inicia la conexión es el 0. Así mismo el siguiente también tiene este número de secuencia y advierte con el ACK el siguiente número de secuencia que es 1.
+
+    Sin embargo la generación de los primero números de secuencia (Números de Secuencia iniciales - NSI) se llevan a cabo usando la expresión:
+
+    NSI = M + F(localip, localport, remoteip, remoteport, secretkey)
+
+    "M" es el temporizador de 4 microsegundos.
+    "F" es la funcion pseudoaleatoria de el identificador de conexión que depende de una serie de parámetros y cuyo proceso debe ser interno a la conexión.
+
+    Todo este proceso es llevado a cabo para favorecer la seguridad de la conexión y que no se produzca una intervención no lícita de la información en la comunicación evitando los llamados  "man in the middle"    
+
+    2 - ¿Qué parte de la cabecera segmento es la que hace que el segmento sea un segmento SYN? 
+
+    La parte de la cabecera que notifica que el segmento es SYN se encuentra en los flags. Concretamente en el flag Syn, el cual en este caso toma el valor set.
+
 
 PREGUNTAS DE ACK EN TCP

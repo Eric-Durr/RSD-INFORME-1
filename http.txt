@@ -1,0 +1,80 @@
+*********************** PREGUNTAS: Protocolo HTTP *************************
+
+1. ¿Por qué debe realizarse una peticion DNS antes de conectar con el servidor?
+
+Cuando accedemos a una pagina web en el navegador, por ejemplo www.elpais.es, primero hacemos una peticion DNS (servidor DNS) para que ese servidor nos 
+facilite la traduccion del dominio www.elpais.es, en este caso, a su direccion IP, y asi con esta IP que nos retorna el servidor DNS podemos acceder al servidor web que maneja la pagina www.elpais.es
+
+PC -> Peticion para acceder a www.elpais.es -> Peticion al servidor DNS que maneja www.elpais.es -> Nos da la IP traducida -> Accedemos al servidor web con la IP de www.elpais.es
+
+************************************
+
+Ahora examine el mensaje de peticion:
+
+************************************
+
+2. ¿Su navegador está ejecutando la version 1.0 o 1.1 del Protocolo HTTP?
+
+Mi navegador (Chrome) esta usando el protocolo HTTP 1.1
+
+3. ¿Qué lenguajes indica el navegador que acepta el servidor?
+
+El servidor acepta el lenguaje español
+Accept-Language: es-ES,es;q=0.9,ru;q=0.8,en;q=0.7\r\n
+
+4. ¿Cual es la direccion IP de su ordenador?
+
+La direccion IP de mi ordenador es: Source: 192.168.0.22
+
+************************************
+
+Ahora examine el mensaje de respuesta:
+
+************************************
+
+5. ¿Qué version de protocolo ésta utilizando el servidor?
+
+Mi navegador (Chrome) esta usando el protocolo HTTP 1.1 en el mensaje de respuesta
+
+6. ¿Cuál es el codigo de estado que devuelve el servidor al navegador (deberia ser 200)? Averigüe que codigos de estado existen y para que sirven
+
+En mi caso he encontrado 2 tipos de estado, uno con codigo 200 y otro con 404. Tipos de codigo de estados:
+
+Codigos 1XX -> Respuestas informativas
+Codigos 2XX -> Respuestas satisfactorias
+Codigos 3XX -> Redirecciones
+Codigos 4XX -> Errores de cliente
+
+7. ¿Cuando se modifico por ultima vez el fichero en el servidor?
+
+Se modifico el mismo dia a las 6 de la mañana
+Last-Modified: Fri, 20 Mar 2020 05:59:04 GMT\r\n
+
+8. ¿Cuantos bytes de contenido se devuelven a su navegador?
+
+Recibo en la peticion 200 128 bytes
+File Data: 128 bytes
+
+9. Inspeccione el contenido de la primera peticion HTTP GET de su navegador al servidor. ¿Observa una lınea “IF-MODIFIED-SINCE” en el HTTP GET?
+
+La primera peticion HTTP GET no contiene ninguna linea “IF-MODIFIED-SINCE”, sin embargo la segunda peticion GET si la tiene: 
+
+10. Inspeccione los contenidos de la respuesta del servidor. ¿Se devuelve un fichero HTML?
+
+En la segunda peticion no devuelve ningun archivo HTML, en cambio, en la primera si, pero como tenemos el fichero guardado en la caché web, nos retorna el valor 304, Not Modified.
+
+11. Inspeccione el contenido de la segunda peticion HTTP GET de su navegador al servidor. ¿Observa una
+lınea “IF-MODIFIED-SINCE” en el HTTP GET? Si es as ́ı, ¿que informacion sigue a la etiqueta “IF-MODIFIED-SINCE”?
+
+En la segunda peticion si hay una lınea “IF-MODIFIED-SINCE”
+If-Modified-Since: Fri, 20 Mar 2020 05:59:04 GMT\r\n
+
+12. ¿Cual es el codigo de estado que devuelve el servidor al navegador en este segundo HTTP GET? ¿Devolvio el servidor un fichero HTML? Explique por que.
+
+En la segunda peticion no devuelve ningun archivo HTML, pero como tenemos el fichero guardado en la caché web, nos retorna el valor 304, Not Modified.
+
+
+
+
+
+

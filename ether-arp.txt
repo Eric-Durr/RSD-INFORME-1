@@ -4,7 +4,8 @@
 
 1. ¿A que dispositivos corresponden la direccion MAC de origen y de destino de la trama?
 
-    Corresponde al dispositivo LCFCHe_Fe_36 para el origen, y AskeyCom_73 para el destino.
+    En las peticiones HTTP GET, como en muchas otras, hay 2 dispositivos, uno de origen y otro de destino, el de origen proporciona los paquetes de datos
+    y el de origen recibe los datos, en este caso: LCFCHe_Fe_36 para el origen, y AskeyCom_73 para el destino.
 
 2. Indique el valor hexadecimal del campo “Frame type”. ¿Cual es el cometido de este campo?
 
@@ -13,13 +14,16 @@
 
 3. ¿Que valor se indica para el CRC de la trama?
 
-    // Esta no se donde se mira
+    Comprobación de redundancia cíclica (CRC). Hace referencia a cyclic redundancy check, el CRC es una función diseñada para detectar cambios accidentales 
+    en datos de computadora y es comúnmente usada en redes digitales y dispositivos de almacenamiento (como discos duros). Es muy popular por su simpleza de implementación, fácil 
+    de analizar matemáticamente y es muy bueno detectando errores causados por ruidos en los canales de transmisión.
 
     Responda a la siguientes preguntas bas ́andose en la trama correspondiente a la respuesta HTTP:
 
 4. ¿A que dispositivos corresponden la direccion MAC de origen y de destino de la trama?
 
-    Corresponde al dispositivo AskeyCom_73 para el origen, y LCFCHe_Fe_36 para el destino.
+    Al igual que en la peticion, existen dos dispositivos, uno emisor y otro receptor, en este caso, al ser la respuesta los dispositivos salen intercambiados
+    Dispositivo AskeyCom_73 para el origen, y LCFCHe_Fe_36 para el destino.
 
 5. ¿Que relacion existe entre las direcciones del paquete de peticion y el de respuesta?
 
@@ -31,17 +35,11 @@
 miento del protocolo. Busque cuales son los campos de un paquete ARP y su cometido.
 
 Hardware address space: Especifica el tipo de hardware; ejemplos son Ethernet o Packet Radio Net.
-
 Protocol address space: Especifica el tipo de protocolo, el mismo que en el campo de tipo EtherType en la cabecera de IEEE 802.
-
 Hardware address length: Especifica la longitud(en bytes) de la dirección hardware del paquete. Para IEEE 802.3 e IEEE 802.5 será de 6.
-
 Protocol address length: Especifica la longitud(en bytes) de las direcciones del protocolo en el paquete. Para IP será de 4.
-
 Operation code: Especifica si se trata de una petición(1) o una solicitud(2) ARP.
-
 Source/target hardware address: Contiene las direcciones física hardware. En IEEE 802.3 son direcciones de 48 bits.
-
 Source/target protocol address: Contiene las direcciones del protocolo. En TCP/IP son direcciones IP de 32 bits.
 
 
@@ -49,6 +47,10 @@ Source/target protocol address: Contiene las direcciones del protocolo. En TCP/I
 
 ¿Cual es el valor hexadecimal para las direcciones MAC fuente y destino que contiene la trama que
 transporta el mensaje de peticion?
+
+Al ser necesario asociar la dirección MAC a nivel de enlace a una dirección IP a nivel
+de red, surge el llamado Protocolo ARP, responsable de asociar la dirección MAC a nivel de enlace a una
+dirección IP a nivel de red.
 
 Fuente: (8c:16:45:36:56:94)
 Destino: (b0:ea:bc:73:be:95)
@@ -62,6 +64,7 @@ El tipo indica el tipo de protocolo que esta usando, en estos casos, 0x0806 para
 
 9. ¿Cual es el valor hexadecimal del campo opcode de la peticion ARP?
 
+El opecode indica el tipo de trama, peticion o respuesta.
 Opcode: 1 (0x0001) ya que es un tipo request
 
 10. Fıjese ahora en los campos Sender MAC address, Sender IP address, Target MAC address y Target

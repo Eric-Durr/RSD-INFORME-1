@@ -45,11 +45,25 @@ Dependiendo del estandar de Ethernet empleado el marco puede variar.
 Algunos elementos más generales pueden ser similares entre varios de 
 estos. Por ejemplo en *Wireshark* se muestran los iguientes:
 
-
 - Destino
 - Origen
 - tipo
 
+Estos datos permiten conocer las direcciones MAC de los dispositivos 
+interconectados en la misma red cableada. De esta manera se conoce el
+origen y el destino en una comunicación.
+
+Un ejemplo de este caso se produce en las **peticiones GET** a una 
+página web. Donde el dispositivo origen solicita una serie de datos 
+al dispositivo destino, que es el servidor donde se encuentra alojada.
+
+Eventualmente el servidor contestará con una respuesta, es en este punto
+donde se intercambian los roles en cuanto a destinatario y origen. Este
+efecto se puede estudiar y visualizar mediante el marco del protocolo
+Ethernet.
+
+!(GET request)[GET-request.jpg "Esquema de una petición GET con su respuesta"]
+>>>>>>>>>>>>>>>Esquema de una comunicación cliente-servidor.
 
 
 ### PROTOCOLO ARP (Address Resolution Protocol)

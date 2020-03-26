@@ -6,6 +6,9 @@
     la capa de enlace. 
 
 
+![Eth portada](ethernet.png "cable ethernet a modo de portada")
+>>>>>>>>>>>>>> Imagen del cable RJ45, icono de este protocolo 
+
 
 ### PROTOCOLO ETHERNET
 

@@ -53,7 +53,8 @@ Por ejemplo en *Wireshark* se muestran los iguientes:
 
 Estos datos permiten conocer las direcciones MAC de los dispositivos 
 interconectados en la misma red cableada. De esta manera se conoce el
-origen y el destino en una comunicación.
+**origen** y el **destino** en una comunicación. Expresados bajo los campos
+del marco que indican esto.
 
 Un ejemplo de este caso se produce en las **peticiones GET** a una 
 página web. Donde el dispositivo origen solicita una serie de datos 
@@ -96,6 +97,6 @@ y correción de errores.
 >
 > Para una determinada secuencia de datos D, el emisor
 > añadirá r bits adicionales R, de modo que los r+d bits
-> resultantes sean exactamente divisibles por G.
+> resultantes sean exactamente divisibles por G.*
 
 ### PROTOCOLO ARP (Address Resolution Protocol)

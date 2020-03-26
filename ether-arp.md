@@ -62,7 +62,7 @@ donde se intercambian los roles en cuanto a destinatario y origen. Este
 efecto se puede estudiar y visualizar mediante el marco del protocolo
 Ethernet.
 
-!(GET request)[GET-request.jpg "Esquema de una petición GET con su respuesta"]
+![GET request](GET-request.jpg "Esquema de una petición GET con su respuesta")
 >>>>>>>>>>>>>>>Esquema de una comunicación cliente-servidor.
 
 

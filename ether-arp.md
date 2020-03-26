@@ -35,7 +35,7 @@
 
 
 ![Eth TRAMA](Trama.png "Imagen de la trama ethernet")
->> Imagen que expresa la trama ethernet.
+>>>>>>>>>>>>>>>Imagen que expresa la trama ethernet.
 
 
 Dependiendo del estandar de Ethernet empleado el marco puede variar.

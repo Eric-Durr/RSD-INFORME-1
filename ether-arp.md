@@ -33,6 +33,8 @@
 > direccionamiento, control, uso y comprobación de la 
 > comunicación.
 
+> Por lo general se  estructura en varias subcapas.
+
 > El estudio de este protocolo durante la práctica no ha 
 > profundizado en cuestiones demasiado concretas. Los aspectos
 > que se presentan son en su mayoría básicos. 
@@ -99,4 +101,11 @@ y correción de errores.
 > añadirá r bits adicionales R, de modo que los r+d bits
 > resultantes sean exactamente divisibles por G.*
 
+**En resumen los aspectos generales son los siguientes:**
+
+- Tecnología LAN más utilizada.
+- Funciona en la capa de enlace de datos y en la capa física.
+- Familia de tecnologías de redes que se define en los estándares IEEE 802.2 y 802.3.
+<br>
+<br>
 ### PROTOCOLO ARP (Address Resolution Protocol)

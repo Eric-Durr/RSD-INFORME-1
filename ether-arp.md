@@ -34,7 +34,7 @@
 > que se presentan son en su mayoría básicos. 
 
 
-![Eth TRAMA](trama.png "Imagen de la trama ethernet")
+![Eth TRAMA](Trama.png "Imagen de la trama ethernet")
 >> Imagen que expresa la trama ethernet.
 
 

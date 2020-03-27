@@ -136,3 +136,31 @@ Se puede **relacionar ARP** con cuatro casos que se dan en la comunicación de d
 - Dos *hosts* quieren comunicarse a través de un *router* **desde redes diferentes**.
 - Cuando un *router* emite un paquete a **través de un router** a un *host*.
 - **Dentro de la misma red**, un *router* quiere emitir un paquete a un *host*.
+
+Se **puede caracterizar un paquete ARP** por una serie de campos que emplea para 
+atender sus solicitudes de enlace:
+- Tipo de hardware (*Hardware address space*)
+- Tipo de protocolo (*Protocol address space*) 
+- Logitud de ID hardware  (*Hardware address length*)
+- Logitud de ID protocolo (*Protocol address length*)
+- Operación (*Operation code*) 
+- direcciones del hardware (*Source/target hardware address*) 
+- direcciones del protocolo (*Source/target protocol address*)
+> Las longitudes se dan en bytes.
+
+>Los campos de direcciones de hardware y protocolo se expanden en otros dos.
+
+
+Especifica el tipo de hardware; ejemplos son Ethernet o Packet Radio Net.
+
+Especifica el tipo de protocolo, el mismo que en el campo de tipo EtherType en la cabecera de IEEE 802.
+
+Especifica la longitud(en bytes) de la dirección hardware del - paquete. Para IEEE 802.3 e IEEE 802.5 será de 6.
+
+Especifica la longitud(en bytes) de las direcciones del protocolo en el paquete. Para IP será de 4.
+
+Especifica si se trata de una petición(1) o una solicitud(2) ARP.
+
+Contiene las direcciones física hardware. En IEEE 802.3 son direcciones de 48 bits.
+
+Contiene las direcciones del protocolo. En TCP/IP son direcciones IP de 32 bits.

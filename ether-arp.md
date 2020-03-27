@@ -152,18 +152,28 @@ atender sus solicitudes de enlace:
 
 
 ![paquete-arp](arp-packet.jpg "Diagrama de un paquete de solicitud/respuesta ARP")
+>>>>>>>>>>>>>>> Se muestra un diagrama de la estructura de un paquete ARP
 
 
-Especifica el tipo de hardware; ejemplos son Ethernet o Packet Radio Net.
+Cada uno de los campos son empleados para la correcta conexión entre dos puntos
+> Los primeros 4 bytes son ocupados por los tipos de hardware y protocolo. Estos
+> son usados a fin de identificar el hardware y protocolo adecuados para eestablecer
+> la comunicación.
 
-Especifica el tipo de protocolo, el mismo que en el campo de tipo EtherType en la cabecera de IEEE 802.
+> Los siguientes 2 bytes son compartidos para rewpresentar la longitud de las direcciones 
+> tanto hardware como de protocolo en términos de bytes y refiriendose al datagrama.
+>
+> Por ejemplo para el protocolo IP expresaría 4.
 
-Especifica la longitud(en bytes) de la dirección hardware del - paquete. Para IEEE 802.3 e IEEE 802.5 será de 6.
+> Los consecutivos 2 bytes al ultimo campo son utilizados para introducir el código
+> de operación. Es en este apartado donde se indica que el datagrama es una solicitud
+> o una respuesta. 
+>
+> En el caso de ser un 1 se habla de una operación de petición y de ser un 2 una respuesta
+> sin embargho en la página [network society](http://www.networksorcery.com/enp/protocol/arp.htm) se habla más en profundidad de sus valores
 
-Especifica la longitud(en bytes) de las direcciones del protocolo en el paquete. Para IP será de 4.
-
-Especifica si se trata de una petición(1) o una solicitud(2) ARP.
-
-Contiene las direcciones física hardware. En IEEE 802.3 son direcciones de 48 bits.
-
-Contiene las direcciones del protocolo. En TCP/IP son direcciones IP de 32 bits.
+> A partir del último campo lo que se incluye son, primero, las direcciones hardware e 
+> IP del emisor. A este le siguen los mismos campos pero para el receptor.
+>
+> Notese que la longitud variará en función de las longitudes registradas para cada parte 
+> de las direcciones.

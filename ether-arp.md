@@ -2,8 +2,6 @@
     En este apartado se hablará sobre los protocolos Ethernet
     y ARP. Se entrará en detalles sobre sus cabeceras y funcionamiento. 
     
-    Tanto Ethernet como ARP se sencuentran en
-    la capa de enlace. 
 
 
 ![Eth portada](ethernet.png "cable ethernet a modo de portada")
@@ -108,4 +106,18 @@ y correción de errores.
 - Familia de tecnologías de redes que se define en los estándares IEEE 802.2 y 802.3.
 <br>
 <br>
-### PROTOCOLO ARP (Address Resolution Protocol)
+
+### PROTOCOLO ARP (Address Resolution Protocol) 
+
+    El protocolo ARP suele ser vinculado con la capa de red ya que este ocupa
+    la labor de reolución de direcciones. Se encarga de localizar la dirección 
+    del hardware relacionado con una dirección IP concreta.
+
+> Esta dirección del hardware se conoce como *Ethernet MAC*
+
+
+Se puede **relacionar ARP** con cuatro casos que se dan en la comunicación de dos hosts
+- Hay dos *hosts* en una **misma red** y se quieren comunicar
+- Dos *hosts* quieren comunicarse a través de un *router* **desde redes diferentes**.
+- Cuando un *router* emite un paquete a **través de un router** a un *host*.
+- **Dentro de la misma red**, un *router* quiere emitir un paquete a un *host*.

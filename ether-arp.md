@@ -170,7 +170,7 @@ Cada uno de los campos son empleados para la correcta conexión entre dos puntos
 > o una respuesta. 
 >
 > En el caso de ser un 1 se habla de una operación de petición y de ser un 2 una respuesta
-> sin embargho en la página [network society](http://www.networksorcery.com/enp/protocol/arp.htm) se habla más en profundidad de sus valores
+> sin embargho en la página [network society](http://www.networksorcery.com/enp/protocol/arp.htm) se habla más en profundidad de sus valores.
 
 > A partir del último campo lo que se incluye son, primero, las direcciones hardware e 
 > IP del emisor. A este le siguen los mismos campos pero para el receptor.

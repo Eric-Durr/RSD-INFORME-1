@@ -151,6 +151,8 @@ atender sus solicitudes de enlace:
 >Los campos de direcciones de hardware y protocolo se expanden en otros dos.
 
 
+![paquete-arp](arp-packet.jpg "Diagrama de un paquete de solicitud/respuesta ARP")
+
 
 Especifica el tipo de hardware; ejemplos son Ethernet o Packet Radio Net.
 

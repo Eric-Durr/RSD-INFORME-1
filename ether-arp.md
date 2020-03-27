@@ -151,6 +151,7 @@ atender sus solicitudes de enlace:
 >Los campos de direcciones de hardware y protocolo se expanden en otros dos.
 
 
+
 Especifica el tipo de hardware; ejemplos son Ethernet o Packet Radio Net.
 
 Especifica el tipo de protocolo, el mismo que en el campo de tipo EtherType en la cabecera de IEEE 802.

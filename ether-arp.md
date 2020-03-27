@@ -107,13 +107,28 @@ y correción de errores.
 <br>
 <br>
 
+***
+
 ### PROTOCOLO ARP (Address Resolution Protocol) 
 
     El protocolo ARP suele ser vinculado con la capa de red ya que este ocupa
     la labor de reolución de direcciones. Se encarga de localizar la dirección 
     del hardware relacionado con una dirección IP concreta.
 
-> Esta dirección del hardware se conoce como *Ethernet MAC*
+> Esta dirección del hardware se conoce como *Ethernet MAC*.
+> Dicha dirección está expresada por un identificador de 48b
+> y que es único desde su fabricación.
+
+El protocolo ARP toma la responsabilidad de coordinar las direcciones físicas
+y lógicas en la comunicación mediante la red. Este protocolo se ayuda por la
+creación de una tabla de direcciones que emplea para la búsqueda.
+
+> Esta tabla se ubica en una memoria caché.
+>> La tabla es recurrida por los equipos para comunicarse.
+>> De no existir el vínculo es ARP quien arbitra la solicitud.
+>> Todos los equipos dentro de la misma red comparan esta dirección
+>> fallida con la suya propia y emiten la respuesta al coincidir. 
+>> Finalmente el par de direcciones es almacenado.
 
 
 Se puede **relacionar ARP** con cuatro casos que se dan en la comunicación de dos hosts

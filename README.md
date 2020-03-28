@@ -4,6 +4,7 @@
  > Distribuidos para la ESIT 
  > (Escuela Superior de Ingeniería y Tecnología)
 
+![portada-redes](portada.jpg "imagen de portada para el informe")
 
 Informe de Practicas realizadas por:
 * Eric Dürr Sierra (alu0101027005@ull.edu.es)
@@ -18,8 +19,10 @@ Informe de Practicas realizadas por:
 
 ## Índice de Practicas
 
-1. Analisis de Protocolos: [**Ethernet y ARP**](ether-arp.md)
-2. Analisis de Protocolos: [**IP y ICMP**](ip-icmp.md)
-3. Analisis de Protocolos: [**UDP y TCP**](udp-tcp.md)
-4. Analisis de Protocolos: [**HTTP**](http.md)
-5. Referencias empleadas: [**Referencias**](referencias.md)
+1. [**Ethernet y ARP**](ether-arp.md)
+2. [**IP y ICMP**](ip-icmp.md)
+3. [**UDP y TCP**](udp-tcp.md)
+4. [**HTTP**](http.md)
+5. [Ética de Wireshark](aspectos-eticos-wireshark.md)
+6. [Respecto al trabajo grupal](evidencias-trabajo-grupo.md)
+7. [**Referencias**](referencias.md)

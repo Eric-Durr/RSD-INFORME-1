@@ -22,8 +22,8 @@ Informe de Practicas realizadas por:
     Cabe destacar que es un estudio básico de los aspectos de los protocolos. No se pretende
     profundizar en gran medida en muchos de ellos.
 
-    También se expone una coprta conclusión acerca de la ética del uso de la herramienta
-    *Wireshar*.
+    También se expone una corta conclusión acerca de la ética del uso de la herramienta
+    Wireshark.
 
 ## Índice de Practicas
 
@@ -31,6 +31,6 @@ Informe de Practicas realizadas por:
 2. [**IP y ICMP**](ip-icmp.md)
 3. [**UDP y TCP**](udp-tcp.md)
 4. [**HTTP**](http.md)
-5. [Ética de Wireshark](aspectos-eticos-wireshark.md)
-6. [Respecto al trabajo grupal](evidencias-trabajo-grupo.md)
+5. [**Ética de Wireshark**](aspectos-eticos-wireshark.md)
+6. [**Respecto al trabajo grupal**](evidencias-trabajo-grupo.md)
 7. [**Referencias**](referencias.md)

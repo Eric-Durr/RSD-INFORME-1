@@ -58,7 +58,7 @@ cambios y decisiones drásticas dirante el desarrollo han sido discutidas y cons
 antes de llevarse a cabo. Desde la elección de la plataforma y método hasta los más 
 sencillos comunicados de la finalización de un apartado.
 
-Noah Sanchez se ha encargado de los documentos (en orden cronológico):
+**Noah Sanchez se ha encargado de los documentos (en orden cronológico):**
 
 - eth-arp.txt
 > que responde las preguntas planteadas sobre Ethernet y ARP
@@ -72,9 +72,8 @@ Noah Sanchez se ha encargado de los documentos (en orden cronológico):
 > este contiene un ensayo y conclusiones acerca de los aspectos de ética de wireshark
 
 <br>
-
-Eric Dürr se ha encargado de los documentos (en orden cronológico):
-
+<br>
+**Eric Dürr se ha encargado de los documentos (en orden cronológico):**
 - ip-icmp.txt
 > que responde las preguntas planteadas sobre IP e ICMP
 - udp-tcp.txt

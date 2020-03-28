@@ -31,6 +31,6 @@ Informe de Practicas realizadas por:
 2. [**IP y ICMP**](ip-icmp.md)
 3. [**UDP y TCP**](udp-tcp.md)
 4. [**HTTP**](http.md)
-5. [Ética de Wireshark](aspectos-eticos-wireshark.md)
-6. [Respecto al trabajo grupal](evidencias-trabajo-grupo.md)
+5. [**Ética de Wireshark**](aspectos-eticos-wireshark.md)
+6. [**Respecto al trabajo grupa**l](evidencias-trabajo-grupo.md)
 7. [**Referencias**](referencias.md)

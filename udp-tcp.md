@@ -137,7 +137,7 @@ reenviado.
 
 **Ejemplo de comunicación TCP**
 
-![TCP](Captura.png "Ejemplo TCP")
+![TCP](Captura.PNG "Ejemplo TCP")
 >>>>>>>>>>>>>>>Ejemplo de comunicacion TCP
 
 En este ejemplo vemos cómo se envía un mensaje con inicio de secuencia en x. El otro punto de la

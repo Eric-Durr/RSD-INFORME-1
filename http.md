@@ -83,6 +83,7 @@ Sin embargo en el propio **navegador** también se puede hacer un **análisis de
 comunicación cliente-servidor mediante el protocolo HTTP. 
 
 <br>
+***
 <br>
 
 Si hacemos hincapié en el proceso de la comunicación estudiado en la práctica, se puede apreciar que la primera petición realizada es de DNS.
@@ -94,3 +95,21 @@ La traza es la siguiente:
 
     
 PC :arrow_right:PETICIÓN AL DOMINIO:arrow_right:PETICIÓN AL SERVIDOR DNS:arrow_right:RESPUESTA CON IP TRADUCIDA:arrow_right:ACCESO.
+
+<br>
+Cabe destacar que el navegador suele proporcionar una información bastante detallada.
+Esto durante la práctica se ha observado sobre todo en el análisis de los header de las
+peticiones que proporcionan información relevante a la versión HTTP empleada por el 
+navegador o el lenguaje que usa, del mismo modo que también ilustra la dirección IP origen
+y la destino o el lenguaje que usa el sitio. 
+
+También la información puede indicar datos relativos a pas peticiones ejecutadas así como su fecha de modificación o ejecución. Inclusive se puede ahondar en el estado recibido.
+
+
+Muchas veces, también se puede apreciar como las peticiones son requeridas pero omitidas, más
+aún en el acceso a sitios web recientes. EEsto se puede deber a que los archivos, HTML entre 
+otros, ya han sido guardados en una caché. Esto se emplea para facilitar y agilizar la carga de datos.
+
+*Toda esta información se suele observar en esta herramienta del buscador:*
+![herramienta de red del buscador](herramienta-red.png "imagen del apartado de análisis de red del navegador")
+>>>>>>>>>>>>>>> Imagen del apartado de análisis de red del navegador

@@ -23,7 +23,8 @@
 > en gran medida ampliable.
 
 
-El protocolo HTTP opera usando una serie de operaciones definidas que pueden o no depender de unos parámetros y que se emplean para hacer consultas al servidor.
+El protocolo HTTP opera usando una serie de mensajes formateados que depende de unas 
+estructuras definidas.
 
 En lugar de ser un flujo continuo de datos, en este caso, se emplean comunicaciones mediante 
 **petición** y **respuesta**. 
@@ -34,18 +35,41 @@ mientras que los que son emitidos por el servidor se conocen como respuestas.
 Los tipos de operaciones HTTP más comunes son:
 > También se les conoce como peticiones HTTP, mensajes HTTP o métodos HTTP.
 
-- GET
-- POST
-- PUT
-- DELETE
+- GET: es una solicitud de datos al servidor.
+    > Indica que solicitamos un recurso como HTML, CSS o cualquier otro tipo de archivo.
 
-Las peticiones tienen una estructura de mensaje distinta a la de las respuestas. Se componen 
+- POST: es una solicitud para enviar una entidad a un recurso en específico.
+    > Se emplea comunmente en los formularios. Causa cambios en el estado.
+
+- PUT: reemplaza las representaciones del recurso con la carga útil.
+
+- DELETE: Borra el recurso especificado.
+
+> Se encuentra una lista más extensa  y detallada en la [página de Mozilla](https://developer.mozilla.org/es/docs/Web/HTTP/Methods)
+
+**Las peticiones** tienen una estructura de mensaje distinta a la de las respuestas. Se componen 
 por el tipo de petición, el path o ruta a la que se aplica, la versión del protocolo y luego 
-la serie de cabeceras que componen los metadatos del mensaje.
+la serie de cabeceras que componen los metadatos del mensaje. Esta última sección se reemplaza
+por el cuerpo del mensaje cuando la petición lol requiere (POST, PUT, etc.)
 
-> Tal y como se observa en la imagen siquiente
-
+Tal y como se observa en la imagen siquiente:
 ![http request image](HTTP_Request.png "Esquema descriptivo de una petición HTTP")
 >>>>>>>>>>>>>>> Esquema descriptivo de una petición HTTP
 
-> Se encuentra una lista más extensa en la [página de Network Sorcery](http://www.networksorcery.com/enp/protocol/http.htm)
+
+Por otro lado **las respuestas** HTTP son compuestas por la versión del protocolo, el código 
+de estado, que es seguido por el mensaje de estado y los headers. Opcionalmente se añade el 
+recurso que se ha perdido.
+
+Los códigos de estado se resumen en:
+- 1xx (Respuesta)
+- 2xx (Éxito)
+- 3xx (Redirección) 
+- 4xx (Error del cliente) (como el 404 -> página no encontrada)
+- 5xx (Error del servidor) (como el 503 -> servicio no disponible)
+
+> todos estos códigos se especifican más aún en sus distintas variantes (101, 102, ...)
+
+Se puede apreciar mejor la estructura de la respuesta en la siguiente imagen:
+![http response image](HTTP_Response.png "Esquema descriptivo de una respuesta HTTP")
+>>>>>>>>>>>>>>> Esquema descriptivo de una respuesta HTTP

@@ -1,6 +1,7 @@
 ## Protocolo IP e ICMP
       En este apartado se hablará sobre los protocolos IP e ICMP. 
-      Se hablará sobre la estructura de paquetes IP  y sus campos de cabecera, asi como la fragmentacion IPv4, utilidad y necesidad de ICMP, comandos *ping* *traceroute*.
+      Se hablará sobre la estructura de paquetes IP  y sus campos de cabecera, asi como la fragmentacion 
+      IPv4, utilidad y necesidad de ICMP, comandos ping traceroute.
       Ambos protocolos se encuentran en la capa de red.
 
 ![IP portada](ip.webp "Portada IP")
@@ -112,6 +113,7 @@ Las cabeceras de estos mensajes son bastante sencillos, solamente tienen 3 campo
        
             · Carga útil como mensaje ICMP "Echo request", se responde con Echo reply.
             · Carga útil como datagrama UDP a un puerto aleatorio, se responde con Destination unreachable (ICMP)
-            · Carga útil como segmento TCP a un puerto aleatorio incluyendo un flag de sincronización activo -> Destination unreachable (ICMP) 
+            · Carga útil como segmento TCP a un puerto aleatorio incluyendo un flag de 
+              sincronización activo -> Destination unreachable (ICMP) 
 
         - Cuando el host emisor recibe el mensaje se termina la traza y se finaliza el proceso

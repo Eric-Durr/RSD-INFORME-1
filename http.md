@@ -1,7 +1,13 @@
 ## Protocolo HTTP
-    Es en esta parte del documento donde se expondrán varios de las 
-    características del protocolo HTTP. Que en lugar de transimitir
-    información binaria está vinculado a un formato textual.  
+    Es en esta parte del documento es donde se expondrán varias de las 
+    características del protocolo HTTP y su análisis.   
+
+
+![imagen HTTP](HTTP.jpg "Imagen de cabecera del protocolo HTTP")
+>>>>>>>>>>>>>> Imagen de cabecera del protocolo HTTP, suele aparecer antes de la dirección DNS para indicar que se emplea ese protocolo.
+
+<br>
+<br>
 
     HTTP hace referencia a las siglas en inglés de Hyper Text
     Transfer Protocol. Es un protocolo a nivel de aplicación. Transmite 
@@ -31,9 +37,8 @@ En lugar de ser un flujo continuo de datos, en este caso, se emplean comunicacio
 
 Una petición hace referencia al mensaje que envía el cliente
 mientras que los que son emitidos por el servidor se conocen como respuestas.
-
+<br>
 Los tipos de operaciones HTTP más comunes son:
-> También se les conoce como peticiones HTTP, mensajes HTTP o métodos HTTP.
 
 - GET: es una solicitud de datos al servidor.
     > Indica que solicitamos un recurso como HTML, CSS o cualquier otro tipo de archivo.
@@ -44,6 +49,8 @@ Los tipos de operaciones HTTP más comunes son:
 - PUT: reemplaza las representaciones del recurso con la carga útil.
 
 - DELETE: Borra el recurso especificado.
+
+> También se les conoce como peticiones HTTP, mensajes HTTP o métodos HTTP.
 
 > Se encuentra una lista más extensa  y detallada en la [página de Mozilla](https://developer.mozilla.org/es/docs/Web/HTTP/Methods)
 
@@ -56,6 +63,7 @@ por el cuerpo del mensaje cuando la petición lol requiere (POST, PUT, etc.)
 ![http request image](HTTP_Request.png "Esquema descriptivo de una petición HTTP")
 >>>>>>>>>>>>>>> Esquema descriptivo de una petición HTTP
 
+<br>
 <br>
 
 Por otro lado **las respuestas** HTTP son compuestas por la versión del protocolo, el código 

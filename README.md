@@ -1,4 +1,4 @@
-# INFORME DE PRACTICAS: REDES
+# INFORME DE PRACTICAS DE PROTOCOLOS EN REDES
  > Este documento corresponde al informe de las prácticas 
  > 1,2, 3 y 4 de la asignatura de Redes y Sistemas 
  > Distribuidos para la ESIT 
@@ -14,8 +14,16 @@ Informe de Practicas realizadas por:
 
 
 ## Resumen
+    El siguiente documento expone varios aspectos recopilados a lo largo del desarrollo
+    de las prácticas de protocolos. Tales aspectos conllevan desde una breve introducción
+    a los aspectos característicos de cada uno de los protocolos hasta las conclusiones 
+    del análisis realizado por medio de la aplicación *Wireshark*.
 
-> debe redactarse un resumen
+    Cabe destacar que es un estudio básico de los aspectos de los protocolos. No se pretende
+    profundizar en gran medida en muchos de ellos.
+
+    También se expone una coprta conclusión acerca de la ética del uso de la herramienta
+    *Wireshar*.
 
 ## Índice de Practicas
 

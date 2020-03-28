@@ -5,7 +5,7 @@
     prácticas y el desarrollo del documento
 
 
-![head image](github-collaboration.png "imagen que refleja la suite usada para el desarrollo")
+![head image](github.png "imagen que refleja la suite usada para el desarrollo")
 >>>>>>>>>>>>>>> En la imagen se muestran los iiconos de las herramientas empleadas para el trabajo colaborativo.
 
 
@@ -87,10 +87,11 @@ sencillos comunicados de la finalización de un apartado.
 
 
 
-> Comentar dificultades de coordinación
-> Comentar método organizativo (trabajo colabirativo en github)
-> repartición de tareas para conocer ambos el temario 
->> intercambiando documentos (md <--> txt )
+Finalmente, como guiño al uso de las tecnologías de esta plataforma hemos decidido **construir un sitio web** para facilitar el acceso al informe y no necesitar de una descarga del mismo.
 
-> consenso en el formato de entrega.
-> Comentar el rol de cada integrante.
+Por otro lado también hemos **recopilado en pdf** dicho informe. Esto ha aportado tres 
+alternativas para acudir a él:
+
+- [Archivos en pdf](./informe_pdf)
+- [Un repositorio en GitHub](https://github.com/EricDS-INFO/RSD-INFORME-1/) 
+- [Un sitio web](https://ericds-info.github.io/RSD-INFORME-1/)

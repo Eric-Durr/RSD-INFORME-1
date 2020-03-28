@@ -3,7 +3,7 @@
     características del protocolo HTTP y su análisis.   
 
 
-![imagen HTTP](HTTP.jpg "Imagen de cabecera del protocolo HTTP")
+![imagen HTTP](HTTPpng.png "Imagen de cabecera del protocolo HTTP")
 >>>>>>>>>>>>>> Imagen de cabecera del protocolo HTTP, suele aparecer antes de la dirección DNS para indicar que se emplea ese protocolo.
 
 <br>

@@ -92,4 +92,5 @@ una traducción del dominio solicitado.
 
 La traza es la siguiente: 
 
-    PC :arrow_right:PETICIÓN AL DOMINIO:arrow_right:PETICIÓN AL SERVIDOR DNS:arrow_right:RESPUESTA CON IP TRADUCIDA:arrow_right:ACCESO.
+    
+PC :arrow_right:PETICIÓN AL DOMINIO:arrow_right:PETICIÓN AL SERVIDOR DNS:arrow_right:RESPUESTA CON IP TRADUCIDA:arrow_right:ACCESO.

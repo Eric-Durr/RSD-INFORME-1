@@ -73,6 +73,7 @@ sencillos comunicados de la finalización de un apartado.
 
 <br>
 <br>
+
 **Eric Dürr se ha encargado de los documentos (en orden cronológico):**
 - ip-icmp.txt
 > que responde las preguntas planteadas sobre IP e ICMP

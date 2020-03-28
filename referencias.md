@@ -9,11 +9,11 @@
 - [ARP en wikipedia](https://es.wikipedia.org/wiki/Protocolo_de_resoluci%C3%B3n_de_direcciones)
 - [UPV](http://personales.upv.es/rmartin/TcpIp/cap02s08.html)
 - [Apuntes de networking](http://apuntesdenetworking.blogspot.com/2011/07/el-protocolo-arp-protocolo-de.html)
-- [Network Society- protocolo ARP](http://www.networksorcery.com/enp/protocol/arp.htm)
+- [Network Sorcery - protocolo ARP](http://www.networksorcery.com/enp/protocol/arp.htm)
 
 
 ### HTTP
 - [CCM - protocolo HTTP](https://es.ccm.net/contents/264-el-protocolo-http)
 - [HTTP en Wikipedia](https://es.wikipedia.org/wiki/Protocolo_de_transferencia_de_hipertexto)
-- [Network Society - protocolo ARP](http://www.networksorcery.com/enp/protocol/http.htm)
+- [Network Sorcery - protocolo ARP](http://www.networksorcery.com/enp/protocol/http.htm)
 - [Generalidades del protocolo HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Overview)

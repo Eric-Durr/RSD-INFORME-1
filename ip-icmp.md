@@ -32,7 +32,7 @@ Cada datagrama IP contiene:
 
 **Cabecera**
 
-![IP cabecera](CabeceraIP.png "Portada IP")
+![IP cabecera](Tabla1.png "Portada IP")
 >>>>>>>>>>>>>>>Cabecera de un datagrama del protocolo
 
 La cabecera tiene 20 bytes de longitud, es decir, 5 palabras, donde se encuentran diferentes campos, como:
@@ -80,3 +80,38 @@ Usa el soporte basico de IP como un protocolo de nivel superior (Es realmente un
 Las cabeceras de estos mensajes son bastante sencillos, solamente tienen 3 campos:
 
 
+![ICMP cabecera](Tabla2.png "Cabecer ICMP")
+>>>>>>>>>>>>>>>Cabecera de un mensaje ICMP
+
+> * Tipo: En este campo esta situado el tipo de mensaje, como el tipo de error que ha ocurrido o que solucitud se ha hecho.
+> * Codigo: Subtipo del primer campo Tipo, precisa el motivo.
+> * Suma de Comprobacion: Datos de comprobacion de errores
+
+
+![Campo Tipo](Tabla3.png "Campo Tipo")
+>>>>>>>>>>>>>>>Campo Tipo y significados
+
+**Comandos Ping y Traceroute**
+
+> *    Comando Ping 
+
+       - Utiliza el protocolo ICMP para envía una petición de eco a un host o router.
+       - Al emitir echo request se recibe un echo response, estos datagramas se componen por:
+             · Cabecera IP + Cabecera ICMP + carga util: estampa de tiempo y numero de bytes de relleno
+       - Con el mecanismo se pretende averiguar si el nodo destino es alcanzable, y saber su tiempo de ida y vuelta.
+                    
+> *    Comando Traceroute: 
+
+       - Determinar el recorrido entre dos hosts, usa el campo TTL de la cabecera IP
+       - Un paquete podría quedar vagando infinitamente por la red, por lo tanto debe existir un mecanismo que detecte esto.
+       - El campo TTL asigna un valor por defecto (64) en el emisor, dicho valor decrementa al cruzar un router.
+       - Si el valor llega a 0 el paquete es descartado y se envía un mensaje ICMP (TTL exceeded) al emisor.
+       - Traceroute construye un paquete para emitirlo entre dos hosts, TTL toma el valor 1 en este caso.
+       - Vuelve al emisor tras devolverlo el primer router, luego se emite con  TTL valor 2 (causando otro mensaje ICMP)
+       - El proceso sigue hasta alcanzar el destino, al llegar toma la carga util y la interpreta:
+       
+            · Carga útil como mensaje ICMP "Echo request", se responde con Echo reply.
+            · Carga útil como datagrama UDP a un puerto aleatorio, se responde con Destination unreachable (ICMP)
+            · Carga útil como segmento TCP a un puerto aleatorio incluyendo un flag de sincronización activo -> Destination unreachable (ICMP) 
+
+        - Cuando el host emisor recibe el mensaje se termina la traza y se finaliza el proceso

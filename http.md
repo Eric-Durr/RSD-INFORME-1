@@ -52,10 +52,11 @@ por el tipo de petición, el path o ruta a la que se aplica, la versión del pro
 la serie de cabeceras que componen los metadatos del mensaje. Esta última sección se reemplaza
 por el cuerpo del mensaje cuando la petición lol requiere (POST, PUT, etc.)
 
-Tal y como se observa en la imagen siquiente:
+*Tal y como se observa en la imagen siquiente:*
 ![http request image](HTTP_Request.png "Esquema descriptivo de una petición HTTP")
 >>>>>>>>>>>>>>> Esquema descriptivo de una petición HTTP
 
+<br>
 
 Por otro lado **las respuestas** HTTP son compuestas por la versión del protocolo, el código 
 de estado, que es seguido por el mensaje de estado y los headers. Opcionalmente se añade el 
@@ -68,8 +69,26 @@ Los códigos de estado se resumen en:
 - 4xx (Error del cliente) (como el 404 -> página no encontrada)
 - 5xx (Error del servidor) (como el 503 -> servicio no disponible)
 
-> todos estos códigos se especifican más aún en sus distintas variantes (101, 102, ...)
+    > todos estos códigos se especifican más aún en sus distintas variantes (101, 102, ...)
 
-Se puede apreciar mejor la estructura de la respuesta en la siguiente imagen:
+
+*Se puede apreciar mejor la estructura de la respuesta en la siguiente imagen:*
 ![http response image](HTTP_Response.png "Esquema descriptivo de una respuesta HTTP")
 >>>>>>>>>>>>>>> Esquema descriptivo de una respuesta HTTP
+
+<br>
+
+Todos estos aspectos pueden ser apreciados y analizados desde *Wireshark* a modo de paquetes.
+Sin embargo en el propio **navegador** también se puede hacer un **análisis de red** de la
+comunicación cliente-servidor mediante el protocolo HTTP. 
+
+<br>
+<br>
+
+Si hacemos hincapié en el proceso de la comunicación estudiado en la práctica, se puede apreciar que la primera petición realizada es de DNS.
+
+Esto se da debido a que primero debemos solicitar un acceso al servidor DNS que proporciona
+una traducción del dominio solicitado.
+
+La traza es la siguiente: 
+    PC :arrow_right:PETICIÓN AL DOMINIO:arrow_right:PETICIÓN AL SERVIDOR DNS:arrow_right:RESPUESTA CON IP TRADUCIDA:arrow_right:ACCESO.

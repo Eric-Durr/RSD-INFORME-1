@@ -1,0 +1,97 @@
+******************** PREGUNTAS: Protocolo Ethernet y ARP **************
+
+******************** ETHERNET 
+
+1. ¿A que dispositivos corresponden la direccion MAC de origen y de destino de la trama?
+
+    En las peticiones HTTP GET, como en muchas otras, hay 2 dispositivos, uno de origen y otro de destino, el de origen proporciona los paquetes de datos
+    y el de origen recibe los datos, en este caso: LCFCHe_Fe_36 para el origen, y AskeyCom_73 para el destino.
+
+2. Indique el valor hexadecimal del campo “Frame type”. ¿Cual es el cometido de este campo?
+
+    El cometido de este campo es indicar el tipo de Frame del paquete, puede ser Data Frame, Management Frame, Control Frame.
+    El Frame Type en este caso tiene valor: 0x25E
+
+3. ¿Que valor se indica para el CRC de la trama?
+
+    Comprobación de redundancia cíclica (CRC). Hace referencia a cyclic redundancy check, el CRC es una función diseñada para detectar cambios accidentales 
+    en datos de computadora y es comúnmente usada en redes digitales y dispositivos de almacenamiento (como discos duros). Es muy popular por su simpleza de implementación, fácil 
+    de analizar matemáticamente y es muy bueno detectando errores causados por ruidos en los canales de transmisión.
+
+    Responda a la siguientes preguntas bas ́andose en la trama correspondiente a la respuesta HTTP:
+
+4. ¿A que dispositivos corresponden la direccion MAC de origen y de destino de la trama?
+
+    Al igual que en la peticion, existen dos dispositivos, uno emisor y otro receptor, en este caso, al ser la respuesta los dispositivos salen intercambiados
+    Dispositivo AskeyCom_73 para el origen, y LCFCHe_Fe_36 para el destino.
+
+5. ¿Que relacion existe entre las direcciones del paquete de peticion y el de respuesta?
+
+    Tienen las mismas direcciones de origen y envio pero intercambiadas, ya que una trama es la peticion y la otra la respuesta
+
+******************** ARP 
+
+6. Descargue la especificacion de ARP de https://tools.ietf.org/html/rfc826 y estudie el funciona-
+miento del protocolo. Busque cuales son los campos de un paquete ARP y su cometido.
+
+Hardware address space: Especifica el tipo de hardware; ejemplos son Ethernet o Packet Radio Net.
+Protocol address space: Especifica el tipo de protocolo, el mismo que en el campo de tipo EtherType en la cabecera de IEEE 802.
+Hardware address length: Especifica la longitud(en bytes) de la dirección hardware del paquete. Para IEEE 802.3 e IEEE 802.5 será de 6.
+Protocol address length: Especifica la longitud(en bytes) de las direcciones del protocolo en el paquete. Para IP será de 4.
+Operation code: Especifica si se trata de una petición(1) o una solicitud(2) ARP.
+Source/target hardware address: Contiene las direcciones física hardware. En IEEE 802.3 son direcciones de 48 bits.
+Source/target protocol address: Contiene las direcciones del protocolo. En TCP/IP son direcciones IP de 32 bits.
+
+
+7. Busque la trama que contiene la peticion ARP realizada por su ordenador.
+
+¿Cual es el valor hexadecimal para las direcciones MAC fuente y destino que contiene la trama que
+transporta el mensaje de peticion?
+
+Al ser necesario asociar la dirección MAC a nivel de enlace a una dirección IP a nivel
+de red, surge el llamado Protocolo ARP, responsable de asociar la dirección MAC a nivel de enlace a una
+dirección IP a nivel de red.
+
+Fuente: (8c:16:45:36:56:94)
+Destino: (b0:ea:bc:73:be:95)
+
+8. Indique el valor hexadecimal para el campo “Type” en la trama Ethernet. Comparelo con el que
+obtuvo en el an ́alisis del protocolo Ethernet. ¿A que se debe esta diferencia?
+
+Type ARP: 0x0806 (ARP)
+Type Ethernet: 0x0800 (IPv4)
+El tipo indica el tipo de protocolo que esta usando, en estos casos, 0x0806 para ARP, y 0x0800 para IPv4
+
+9. ¿Cual es el valor hexadecimal del campo opcode de la peticion ARP?
+
+El opecode indica el tipo de trama, peticion o respuesta.
+Opcode: 1 (0x0001) ya que es un tipo request
+
+10. Fıjese ahora en los campos Sender MAC address, Sender IP address, Target MAC address y Target
+IP address de la peticion ARP. Fıjese en el contenido e indique cual es el cometido de cada uno de ellos.
+
+Sender MAC Adress: (b0:ea:bc:73:be:95)
+Sender IP Adress: 192.168.1.1
+Target MAC Adress: (00:00:00:00:00:00)
+Target IP Adress: 192.168.1.62
+
+11. Busque la trama que contiene la respuesta a la peticion analizada anteriormente.
+
+12. ¿Cual es el valor hexadecimal para las direcciones MAC fuente y destino que contiene la trama que
+transporta el mensaje de respuesta?
+
+8c:16:45:36:56:94
+b0:ea:bc:73:be:95
+
+13. ¿Cual es el valor hexadecimal del campo opcode de la peticion ARP?
+
+Opcode: 2 (0x0002) ya que es un tipo reply
+
+14. Fıjese ahora en los campos Sender MAC address, Sender IP address, Target MAC address y Target
+IP address de la peticion ARP. Indique cual es el cometido de cada uno de ellos. ¿Cual es la diferencia
+con estos mismos campos en la peticion que ha analizado anteriormente?
+
+Sender MAC address: LCFCHeFe_36:56:94 (8c:16:45:36:56:94)
+Sender IP address: 192.168.1.62
+Target MAC address: AskeyCom_73:be:95 (b0:ea:bc:73:be:95)
+Target IP address: 192.168.1.1

@@ -1,5 +1,6 @@
 ## Aspectos eticos de Wireshark
-    Este documento cuestiona las implicaciones eticas y morales del programa Wirehark, utilizado para la obtencion de paquetes y el analisis de protocolos.
+    Este documento cuestiona las implicaciones eticas y morales del programa Wirehark, 
+    utilizado para la obtencion de paquetes y el analisis de protocolos.
 
 ![Wireshark](wireshark.png "Wireshark")
 >>>>>>>>>>>>>Logo de Wireshark

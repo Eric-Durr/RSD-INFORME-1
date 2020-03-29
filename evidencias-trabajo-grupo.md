@@ -6,7 +6,7 @@
 
 
 ![head image](images/github.png "imagen que refleja la suite usada para el desarrollo")
->>>>>>>>>>>>>>> En la imagen se muestran las herramientas empleadas para el trabajo colaborativo.
+> En la imagen se muestran las herramientas empleadas para el trabajo colaborativo.
 
 
     Cabe destacar que el trabajo en grupo puede ser un arma de doble filo,

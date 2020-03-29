@@ -4,7 +4,7 @@
     Tambien se comentará el cierre TCP y el funcionamiento ACK en TCP.
 
 ![UDP_TCP Portada](images/tcp-vs-udp-logo.webp "Portada")
->>>>>>>>>>>>>>>Portada para ambos protocolos
+>Portada para ambos protocolos
 
 ### Protocolo UDP (User Datagram Protocol)
 
@@ -45,7 +45,7 @@ bytes.
 Tiene un total de 4 campos de 2 bytes cada uno, por lo que ocupa un total de 8 bytes
 
 ![UDP Cabecera](images/Tabla4.png "UDP Cabecera")
->>>>>>>>>>>>>>>Cabecera de un mensaje UDP
+>Cabecera de un mensaje UDP
 
 > * Puerto de origen: Indica el puerto del proceso que envía, es el puerto que
 se direcciona en las respuestas.
@@ -81,7 +81,7 @@ de opciones. Sin opciones, la cabecera ocupa un total de 20 bytes. Como se aprec
 en la siguiente imagen, tiene los siguientes campos:
 
 ![TCP Cabecera](images/Tabla5.png "TCP Cabecera")
->>>>>>>>>>>>>>>Cabecera de un mensaje UDP
+>Cabecera de un mensaje UDP
 
 > * Puerto origen: Identifica el número de puerto de un programa de aplicación
 de origen.
@@ -138,7 +138,7 @@ reenviado.
 **Ejemplo de comunicación TCP**
 
 ![TCP](images/Captura.PNG "Ejemplo TCP")
->>>>>>>>>>>>>>>Ejemplo de comunicacion TCP
+>Ejemplo de comunicacion TCP
 
 En este ejemplo vemos cómo se envía un mensaje con inicio de secuencia en x. El otro punto de la
 conexión (server en este caso) envía un nuevo paquete con una secuencia que inicia en y,

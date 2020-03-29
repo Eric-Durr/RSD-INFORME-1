@@ -4,7 +4,7 @@
 
 
 ![imagen HTTP](images/HTTPpng.png "Imagen de cabecera del protocolo HTTP")
->>>>>>>>>>>>>> Imagen de cabecera del protocolo HTTP, suele aparecer antes de la dirección DNS para indicar que se emplea ese protocolo.
+>Imagen de cabecera del protocolo HTTP, suele aparecer antes de la dirección DNS para indicar que se emplea ese protocolo.
 
 <br>
 <br>
@@ -61,7 +61,7 @@ por el cuerpo del mensaje cuando la petición lo requiere (POST, PUT, etc.)
 
 *Tal y como se observa en la imagen siquiente:*
 ![http request image](images/HTTP_Request.png "Esquema descriptivo de una petición HTTP")
->>>>>>>>>>>>>>> Esquema descriptivo de una petición HTTP
+>Esquema descriptivo de una petición HTTP
 
 <br>
 <br>
@@ -82,7 +82,7 @@ Los códigos de estado se resumen en:
 
 *Se puede apreciar mejor la estructura de la respuesta en la siguiente imagen:*
 ![http response image](images/HTTP_Response.png "Esquema descriptivo de una respuesta HTTP")
->>>>>>>>>>>>>>> Esquema descriptivo de una respuesta HTTP
+>Esquema descriptivo de una respuesta HTTP
 
 <br>
 
@@ -120,4 +120,4 @@ otros, ya han sido guardados en una caché. Esto se emplea para facilitar y agil
 
 *Toda esta información se suele observar en esta herramienta del buscador:*
 ![herramienta de red del buscador](images/herramienta-red.png "imagen del apartado de análisis de red del navegador")
->>>>>>>>>>>>>>> Imagen del apartado de análisis de red del navegador
+>Imagen del apartado de análisis de red del navegador

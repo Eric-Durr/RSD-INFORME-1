@@ -31,6 +31,12 @@ académico, cuestiones de mantenimiento, trabajo sobre las redes y el análisis 
 de forma profesional es algo que puede causar muchos problemas y dificultades.
 
 ![Etica](etica.png "Representacion de la etica")
->>>>>>>>>>>>>Representacion de la ética
+>>>>>>>>>>>>>Representación de la ética
 
-Cada persona es libre de hacer lo que crea conveniente y tendrá un criterio diferente sobre lo que es éticamente correcto hacer o no, de lo que se puede usar, escuchar, y de hasta dónde puede asomarse. Esto sin duda es inevitable, el juicio de cada uno es subjetivo, y no se comparte estrictamente con todo el mundo. Sin embargo, lo que sí debemos saber todos, es que somos completamente conscientes de lo que está ocurriendo, de las acciones que realizamos y podemos llegar a realizar con estos programas y, por su puesto, con la información que obtenemos gracias a su uso.
+Cada persona es libre de hacer lo que crea conveniente y tendrá un criterio diferente sobre 
+lo que es éticamente correcto hacer o no, de lo que se puede usar, escuchar, y de hasta dónde 
+puede asomarse. Esto sin duda es inevitable, el juicio de cada uno es subjetivo, y no se 
+comparte estrictamente con todo el mundo. Sin embargo, lo que sí debemos saber todos, es que 
+somos completamente conscientes de lo que está ocurriendo, de las acciones que realizamos y
+podemos llegar a realizar con estos programas y, por su puesto, con la información que 
+obtenemos gracias a su uso.

@@ -5,19 +5,13 @@
     prácticas y el desarrollo del documento
 
 
-![head image](github-collaboration.png "imagen que refleja la suite usada para el desarrollo")
->>>>>>>>>>>>>>> En la imagen se muestran los iiconos de las herramientas empleadas para el trabajo colaborativo.
-
-
+![head image](github.png "imagen que refleja la suite usada para el desarrollo")
+>>>>>>>>>>>>>>> En la imagen se muestran las herramientas empleadas para el trabajo colaborativo.
 
 
     Cabe destacar que el trabajo en grupo puede ser un arma de doble filo,
-    ya que este puede aportar tanto caos como orden a la hora de llevar 
-    menos peso de carga pero la responsabilidad de coordinarse.
-
-> Más aún considerandose situaciones que pueden dificultar el tener a tiempo
-> un grupo formado o adversidades sufridas por el confinamiento
-> (a causa del CoVid-19 )
+    ya que este puede aportar tanto caos como orden; llevar menos peso de
+    carga pero mantener la responsabilidad de coordinarse tiene sus implicaciones.
 
     Es por ello que hemos decidido tomar la iniciativa de dar un paso de
     responsabilidad y semejar en la medida de lo posible nuestro modelo
@@ -25,10 +19,10 @@
     desarrollo software.
 
 El uso de **git** nos ha facilitado dividir el trabajo de manera que no nos
-solapemos y podamos llevar un consenso de formato y desarrollo del informe y 
-el seguimiento de la práctica. Más aún a esto se le ha añadido el uso de 
-GitHub para aprovecharnos de las herramientas y metodologías de trabajo 
-colaborativo que este aporta.
+solapemos y podamos llevar un consenso de formato y desarrollo del informe. 
+Más aún a esto se le ha añadido el uso de GitHub para aprovecharnos de las 
+herramientas y metodologías de trabajo colaborativo que este aporta.
+
 
 Ya que empleamos esta plataforma, nos hemos decantado por el desarrollo del
 informe mediante el lenguaje Markdown. GitHub provee herramientas de 
@@ -38,7 +32,7 @@ la eficacia y la eficiencia del resultado final de cara a una entrega.
 ***
 
 Al principio el desbalance netre ambas partes imponía una brecha organizativa que 
-había que suplir. Sin embargo, una vez formadas ambas partes del grupo nos pudimos
+había que cubrir. Sin embargo, una vez formadas ambas partes del grupo nos pudimos
 dar el lujo de no necesitar hacer el trabajo a la vez para evitar perjuicios en el
 desarrollo.
 
@@ -54,11 +48,11 @@ contenido del temario.
 
 Ambas partes nunca han sido vulneradas ni incomunicadas, lo cual es una ventaja que hemos 
 podido destacar frente al caso común de los trabajos grupales. De manera constante los
-cambios y decisiones drásticas dirante el desarrollo han sido discutidas y consensuadas 
-antes de llevarse a cabo. Desde la elección de la plataforma y método hasta los más 
+cambios y decisiones drásticas durante el desarrollo han sido discutidas y consensuadas 
+antes de llevarse a cabo. Desde la elección de plataforma y método hasta los más 
 sencillos comunicados de la finalización de un apartado.
 
-Noah Sanchez se ha encargado de los documentos (en orden cronológico):
+**Noah Sanchez se ha encargado de los documentos (en orden cronológico):**
 
 - eth-arp.txt
 > que responde las preguntas planteadas sobre Ethernet y ARP
@@ -72,9 +66,9 @@ Noah Sanchez se ha encargado de los documentos (en orden cronológico):
 > este contiene un ensayo y conclusiones acerca de los aspectos de ética de wireshark
 
 <br>
+<br>
 
-Eric Dürr se ha encargado de los documentos (en orden cronológico):
-
+**Eric Dürr se ha encargado de los documentos (en orden cronológico):**
 - ip-icmp.txt
 > que responde las preguntas planteadas sobre IP e ICMP
 - udp-tcp.txt
@@ -88,10 +82,15 @@ Eric Dürr se ha encargado de los documentos (en orden cronológico):
 
 
 
-> Comentar dificultades de coordinación
-> Comentar método organizativo (trabajo colabirativo en github)
-> repartición de tareas para conocer ambos el temario 
->> intercambiando documentos (md <--> txt )
+Finalmente, como guiño al uso de las tecnologías de esta plataforma hemos decidido 
+**construir un sitio web** para facilitar el acceso al informe y no necesitar de una descarga 
+del mismo.
 
-> consenso en el formato de entrega.
-> Comentar el rol de cada integrante.
+Por otro lado también hemos **recopilado en pdf** dicho informe tal y como dicta el caso
+común de elaboración de prácticas. 
+
+Esto ha aportado tres alternativas para acudir al trabajo realizado:
+
+- [Archivos en pdf](./informe_pdf)
+- [Un repositorio en GitHub](https://github.com/EricDS-INFO/RSD-INFORME-1/) 
+- [Un sitio web](https://ericds-info.github.io/RSD-INFORME-1/)

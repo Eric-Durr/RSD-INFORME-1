@@ -102,7 +102,8 @@ y correción de errores.
 > añadirá r bits adicionales R, de modo que los r+d bits
 > resultantes sean exactamente divisibles por G.*
 
-**En resumen los aspectos generales son los siguientes:**
+
+**En resumen los aspectos generales es el soguiente:**
 
 - Tecnología LAN más utilizada.
 - Funciona en la capa de enlace de datos y en la capa física.
@@ -119,7 +120,7 @@ y correción de errores.
     del hardware relacionado con una dirección IP concreta.
 
 > Esta dirección del hardware se conoce como *Ethernet MAC*.
-> Dicha dirección está expresada por un identificador de 48b
+> Dicha dirección está expresada por un identificador de 48 bits 
 > y que es único desde su fabricación.
 
 El protocolo ARP toma la responsabilidad de coordinar las direcciones físicas
@@ -144,8 +145,8 @@ Se **puede caracterizar un paquete ARP** por una serie de campos que emplea para
 atender sus solicitudes de enlace:
 - Tipo de hardware (*Hardware address space*)
 - Tipo de protocolo (*Protocol address space*) 
-- Logitud de ID hardware  (*Hardware address length*)
-- Logitud de ID protocolo (*Protocol address length*)
+- Longitud de ID hardware  (*Hardware address length*)
+- Longitud de ID protocolo (*Protocol address length*)
 - Operación (*Operation code*) 
 - direcciones del hardware (*Source/target hardware address*) 
 - direcciones del protocolo (*Source/target protocol address*)
@@ -160,10 +161,10 @@ atender sus solicitudes de enlace:
 
 Cada uno de los campos son empleados para la correcta conexión entre dos puntos
 > Los primeros 4 bytes son ocupados por los tipos de hardware y protocolo. Estos
-> son usados a fin de identificar el hardware y protocolo adecuados para eestablecer
+> son usados a fin de identificar el hardware y protocolo adecuados para establecer
 > la comunicación.
 
-> Los siguientes 2 bytes son compartidos para rewpresentar la longitud de las direcciones 
+> Los siguientes 2 bytes son compartidos para representar la longitud de las direcciones 
 > tanto hardware como de protocolo en términos de bytes y refiriendose al datagrama.
 >
 > Por ejemplo para el protocolo IP expresaría 4.
@@ -173,10 +174,10 @@ Cada uno de los campos son empleados para la correcta conexión entre dos puntos
 > o una respuesta. 
 >
 > En el caso de ser un 1 se habla de una operación de petición y de ser un 2 una respuesta
-> sin embargho en la página [network society](http://www.networksorcery.com/enp/protocol/arp.htm) se habla más en profundidad de sus valores.
+> sin embargho en la página [Network Sorcery](http://www.networksorcery.com/enp/protocol/arp.htm) se habla más en profundidad de sus valores.
 
 > A partir del último campo lo que se incluye son, primero, las direcciones hardware e 
 > IP del emisor. A este le siguen los mismos campos pero para el receptor.
 >
-> Notese que la longitud variará en función de las longitudes registradas para cada parte 
+> Nótese que la longitud variará en función de las longitudes registradas para cada parte 
 > de las direcciones.

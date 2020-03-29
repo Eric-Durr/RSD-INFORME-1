@@ -2,7 +2,7 @@
     Este documento cuestiona las implicaciones éticas y morales del programa Wirehark, 
     utilizado para la obtención de paquetes y el análisis de protocolos.
 
-![Wireshark](wireshark.png "Wireshark")
+![Wireshark](images/wireshark.png "Wireshark")
 >>>>>>>>>>>>>Logo de Wireshark
 
 **Reflexion etica**
@@ -30,7 +30,7 @@ Por norma general usar un programa de este estilo para algo que vaya más alla d
 académico, cuestiones de mantenimiento, trabajo sobre las redes y el análisis de información 
 de forma profesional es algo que puede causar muchos problemas y dificultades.
 
-![Etica](etica.png "Representacion de la etica")
+![Etica](images/etica.png "Representacion de la etica")
 >>>>>>>>>>>>>Representación de la ética
 
 Cada persona es libre de hacer lo que crea conveniente y tendrá un criterio diferente sobre 

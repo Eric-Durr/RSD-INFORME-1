@@ -4,7 +4,7 @@
     
 
 
-![Eth portada](ethernet.png "cable ethernet a modo de portada")
+![Eth portada](images/ethernet.png "cable ethernet a modo de portada")
 >>>>>>>>>>>>>>>Imagen del cable RJ45, icono de este protocolo 
 
 
@@ -38,7 +38,7 @@
 > que se presentan son en su mayoría básicos. 
 
 
-![Eth TRAMA](Trama.png "Imagen de la trama Ethernet")
+![Eth TRAMA](images/Trama.png "Imagen de la trama Ethernet")
 >>>>>>>>>>>>>>>Imagen que expresa la trama Ethernet.
 
 
@@ -69,7 +69,7 @@ Esta serie de valores y características son capturados por *Wireshark*
 en formato hexadecimal para expresar la cadena de bits que constituye 
 la trama.
 
-![GET request](GET-request.jpg "Esquema de una petición GET con su respuesta")
+![GET request](images/GET-request.jpg "Esquema de una petición GET con su respuesta")
 >>>>>>>>>>>>>>>Esquema de una comunicación cliente-servidor.
 
 
@@ -155,7 +155,7 @@ atender sus solicitudes de enlace:
 >Los campos de direcciones de hardware y protocolo se expanden en otros dos.
 
 
-![paquete-arp](arp-packet.jpg "Diagrama de un paquete de solicitud/respuesta ARP")
+![paquete-arp](images/arp-packet.jpg "Diagrama de un paquete de solicitud/respuesta ARP")
 >>>>>>>>>>>>>>> Se muestra un diagrama de la estructura de un paquete ARP
 
 

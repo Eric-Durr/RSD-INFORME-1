@@ -4,7 +4,7 @@
  > Distribuidos para la ESIT 
  > (Escuela Superior de Ingeniería y Tecnología)
 
-![portada-redes](portada.jpg "imagen de portada para el informe")
+![portada-redes](images/portada.jpg "imagen de portada para el informe")
 
 Informe de Practicas realizadas por:
 * Eric Dürr Sierra (alu0101027005@ull.edu.es)

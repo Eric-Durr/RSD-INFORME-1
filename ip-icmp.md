@@ -4,7 +4,7 @@
       IPv4, utilidad y necesidad de ICMP, comandos ping traceroute.
       Ambos protocolos se encuentran en la capa de red.
 
-![IP portada](ip.webp "Portada IP")
+![IP portada](images/ip.webp "Portada IP")
 >>>>>>>>>>>>>>>Portada del Protocolo IP
 
 ### Protocolo IP (Internet Protocol)
@@ -33,7 +33,7 @@ Cada datagrama IP contiene:
 
 **Cabecera**
 
-![IP cabecera](Tabla1.png "Portada IP")
+![IP cabecera](images/Tabla1.png "Portada IP")
 >>>>>>>>>>>>>>>Cabecera de un datagrama del protocolo
 
 La cabecera tiene 20 bytes de longitud, es decir, 5 palabras, donde se encuentran diferentes campos, como:
@@ -81,7 +81,7 @@ Usa el soporte basico de IP como un protocolo de nivel superior (Es realmente un
 Las cabeceras de estos mensajes son bastante sencillos, solamente tienen 3 campos:
 
 
-![ICMP cabecera](Tabla2.png "Cabecer ICMP")
+![ICMP cabecera](images/Tabla2.png "Cabecer ICMP")
 >>>>Cabecera de un mensaje ICMP
 
 > * Tipo: En este campo esta situado el tipo de mensaje, como el tipo de error que ha ocurrido o que solucitud se ha hecho.
@@ -89,7 +89,7 @@ Las cabeceras de estos mensajes son bastante sencillos, solamente tienen 3 campo
 > * Suma de Comprobacion: Datos de comprobacion de errores
 
 
-![Campo Tipo](Tabla3.png "Campo Tipo")
+![Campo Tipo](images/Tabla3.png "Campo Tipo")
 >>>>>>>>>>>Campo Tipo y significados
 
 **Comandos Ping y Traceroute**

@@ -12,8 +12,8 @@
 
 **Antecedentes:**
 > El protocolo Ethernet tiene como precursor al protocolo ALOHA
-> siendo este una mejora basada en muchos de los conceptos del
-> protocolo anterior.
+> siendo Ethernet una mejora basada en muchos de los conceptos de
+> este.
 
 > Este protocolo es el más usado para areas locales, cableadas,
 > a nivel de enlace. Permite el acceso múltiple y consta de un
@@ -27,23 +27,23 @@
 **Estructura del marco Ethernet**
 > La trama Ethernet se compone por una carga útil; que es el
 > datagrama, ya encapsulado, de la capa superior y por una 
-> cabecera Ethernet; que continene información relativa al 
+> cabecera Ethernet; que contiene información relativa al 
 > direccionamiento, control, uso y comprobación de la 
 > comunicación.
-
-> Por lo general se  estructura en varias subcapas.
-
+>
+> Por lo general se estructura en varias subcapas.
+>
 > El estudio de este protocolo durante la práctica no ha 
 > profundizado en cuestiones demasiado concretas. Los aspectos
 > que se presentan son en su mayoría básicos. 
 
 
-![Eth TRAMA](Trama.png "Imagen de la trama ethernet")
->>>>>>>>>>>>>>>Imagen que expresa la trama ethernet.
+![Eth TRAMA](Trama.png "Imagen de la trama Ethernet")
+>>>>>>>>>>>>>>>Imagen que expresa la trama Ethernet.
 
 
-Dependiendo del estandar de Ethernet empleado el marco puede variar,
-durante el curso ampliaremos el caso del estandar IEEE 802.3.Algunos 
+Dependiendo del estandar de Ethernet empleado el marco puede variar.
+Durante el curso aplicaremos el caso del estandar IEEE 802.3. Algunos 
 elementos más generales pueden ser similares entre varios de estos. 
 Por ejemplo en *Wireshark* se muestran los iguientes:
 
@@ -85,12 +85,15 @@ En función de la acción que esté resolviendo el protocolo adoptará un tipo u
 
 Sin embargo hay **campos que no podemos capturar** como el **CRC (cyclic redundancy check)**
 que está presente en la trama para realizar las comprobaciones pertinentes en cuanto a la 
-detección de errores en la comunicación. Este campo no es visible porque permanece en la 
+detección de errores en la comunicación.
+
+Este campo no es visible porque permanece en la 
 tarjeta de red en lugar de ser transferido a la aplicación de *Wireshark*.
 
 La popularidad del campo **CRC** recae en su sipleza y gran efectividad en cuanto a detección
 y correción de errores. 
 
+> **Funcionamiento:**
 > El emisor y el receptor deben estar de acuerdo en un
 > patrón de r+1 bits, que se conoce como generador (G).
 > El bit más significativo de G debe ser “1”.

@@ -17,7 +17,7 @@ Informe de Practicas realizadas por:
     El siguiente documento expone varios aspectos recopilados a lo largo del desarrollo
     de las prácticas de protocolos. Tales aspectos conllevan desde una breve introducción
     a los aspectos característicos de cada uno de los protocolos hasta las conclusiones 
-    del análisis realizado por medio de la aplicación *Wireshark*.
+    del análisis realizado por medio de la aplicación  Wireshark .
 
     Cabe destacar que es un estudio básico de los aspectos de los protocolos. No se pretende
     profundizar en gran medida en muchos de ellos.

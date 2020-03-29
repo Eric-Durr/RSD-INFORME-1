@@ -1,0 +1,276 @@
+----- DOCUMENTO DE RESPUESTAS PARA LA P2 -----
+
+RESUMEN:
+    obj: conocer estructura de paquete IP y campos de cabecera, fragmentación ipv4, utilidad y necesidad de ICMP, comandos ping y traceroute
+
+    Protocolo IP:   
+                    - mover datagramas entre un conjunto de redes interconectadas, pasándolos de un módulo a otro hasta el destino.
+                    - los módulos residen en hosts y pasarelas en internet.
+                    - se encaminan a través de redes individualesmediante la interpretación de una dirección internet <- importancia de un mecanismo.
+                    - en el enrutamiento entre módulos los datagramas pueden necesitar atravesar una red de menor tamaño 
+                      máximo de paquete -> mecanismo de fragmentación.
+                    - para que funcione bien se requiere añadir una cabecera IP a cada datagrama enviado.
+                    - la cabecera contiene toda la información necesaria para que hosts y routers puedan encaminarlos a sus 
+                      destinos y fragmentarlos cuando sea necesario.
+    Protocolo ICMP: 
+                    - Es un protocolo de mensajes de control de internet (ICMP) 
+                    - usa el soporte básico de IP como un protocolo de nivel superior (es una parte de IP realmente)
+                    - se envían cuando:
+                                        · un datagrama no puede alcanzar su destino.
+                                        · una pasarela no dispone de almacenamiento temporal. 
+                                        · cuando la pasarela puede dirigir al host para emitir por una ruta más corta
+                    - IP no fue diseñado para ser 100% fiable -> ICMP no lo convierte en fiable.
+                    - el propósito de ICMP tiene como propósito suministrar información sobre los problemas del entorno.
+                    - Los protocolos superiores a IP deben implementar sus propias soluciones de fiabilidad.
+
+    Comando ping: 
+                    - Utiliza el protocolo ICMP -> envía una petición de eco a un host o router.
+                    - al emitir echo request se recibe un echo response -> estos datagramas se componen por:
+                        · (cabecera IP) + (cabecera ICMP) + (carga util: estampa de tiempo y numero de bytes de relleno)
+                    - con el mecanismo se pretende averiguar si el nodo destino es alcanzable +  tiempo de ida y vuelta.
+                    
+    Comando traceroute:
+                    - determinar el recorrido entre dos hosts -- usa --> campo TTL de la cabecera IP
+                    - un paquete podría quedar vagando infinitamente por la red --> debe existir un mecanismo que detecte esto.
+                    - El campo TTL asigna un valor por defecto (64) en el emisor, dicho valor decrementa al cruzar un router.
+                    - si el valor llega a 0 el paquete es descartado y se envía un mensaje ICMP (TTL exceeded) al emisor.
+                    - Traceroute construye un paquete para emitirlo entre dos hosts -> TTL toma el valor 1 en este caso.
+                    - Vuelve al emisor tras devolverlo el primer router -> ahora se emite con  TTL valor 2 (causando otro mensaje ICMP)
+                    - El proceso sigue hasta alcanzar el destino -> all llegar toma la carga util y la interpreta:
+                            
+                            · Carga útil como mensaje ICMP "Echo request" -> se responde con Echo reply.
+                            · Carga útil como datagrama UDP a un puerto aleatorio -> se responde con Destination unreachable (ICMP)
+                            · Carga útil como segmento TCP a un puerto aleatorio +  flag de sincronización activo -> Destination unreachable (ICMP) 
+
+                            (cuando el host emisor recibe el mensaje se termina la traza y se finaliza el proceso)
+
+
+PREGUNTAs PASO 1 ( Estudio de los mensajes ICMP asociados al comando ping)
+
+
+  1 - ¿Cuál es la dirección IP de su ordenador? ¿Cuál es la dirección IP del nodo destino?
+
+    La dirección IP de mi ordenador, en este caso, corresponde al extremo emisor de la comunicación 
+    o host origen, su valor es aquél que indica el campo "Source" de wireshark 192.186.1.87. 
+
+    Por otro lado el nodo destino recibe la dirección IP del extremo receptor de la comunicación ante un mensaje Echo request
+    de ICMP. Este valor se puede comprobar en el campo "Destination" de wireshark 216.58.211.227.
+
+    Al emitir una Echo reply los campos de Destination y Source son intercambiados, tal y como la lógica de la emisión-recepción
+    de mensajes indica.
+
+
+  2 - ¿Por qué un paquete ICMP no tiene un numero de destino y de origen?
+       
+    Esto puede explicarse por la definición del propósito del propio protocolo. Dado que este no toma la responsabilidad de emitir
+    ni recibir paquetes, solo de informar de errores, se abstrae de las direcciones de destino y origen. Difiere de esta manera de 
+    los protocolos de la capa de enlace (como TCP y UDP), es un protocolo complementario a IP que cubre la necesidad de informar 
+    ante distintas situaciones de la comunicación. ping y traceroute son una excepción al uso de aplicaciones de usuario de este 
+    protocolo.
+
+
+  3 - Examine uno de los paquetes echo request emitidos por su ordenador. ¿Cuál es el código y el tipo?
+      ¿Qué otros campos tienen paquetes ICMP de este tipo? ¿Cuántos bytes ocupan la suma de comprobación
+      (checksum), el numero de secuencia y el identificador?
+
+      Este paquete corresponde a uno de los distintos tipos de paquete del protocolo ICMP. En concreto el
+      tipo de un mensaje de control Echo request es el 8 (0x08). Este tipo de código se localiza en el primer
+      byte de la cabecera ICMP, el siguiente corresponde al código al que hace alusión el enunciado.
+
+      Los siguientes 16 bits (los octetos 3 y 4) corresponde al checksum (suma de comprobación) empleado en la
+      detección de errores. Los últimos 4 bytes varían según el tipo del código ICMP.
+
+      El código junto al tipo expresa el subtipo. En este caso es 0, dado que por definición debe ser así cuando 
+      se trata de un tipo Echo request.
+
+      En el caso de un Echo request los bytes 5 y 6 son ocupados por el identificador y el número de secuencia
+      consecutivamente. finalmente los últimos 4 bytes ocupan los datos del mensaje.
+
+      Respecto a los campos de los paquetes ICMP son los siguientes:
+        -------- TIPO ( 1 byte ) --------
+        - type -> 8 por Echo request
+        -------- CÓDIGO ( 1 byte ) --------
+        - code -> 0 por Echo request
+        -------- SUMA DE COMPROBACIÓN ( 2 bytes ) --------
+        - checksum -> [número] [correcto/fallido]
+        + estatus de comprobación
+        -------- IDENTIFICADOR ( 2 bytes ) --------
+        - Identifyer (BE) [numero] parte 1
+        - Identifyer (LE) [numero] parte 2
+        -------- NUMERO DE SECUENCIA ( 2 bytes ) --------
+        - Sequence num (BE) [numero] parte 1
+        - Sequence num (LE) [numero] parte 2
+        + marco de respuesta
+        -------- SECCIÓN DE DATOS ( 4 bytes ) --------
+        - Timestamp from icmp data: datos de la estampa de tiempo (fecha)
+        + tiempo necesitado
+        - Data (datos de relleno)
+
+
+    4 - Examine uno de los paquetes Echo reply. ¿Cuál es el código y el tipo ?¿Qué otros campos tienen los paquetes ICMP de este tipo?
+        ¿Cuántos bytes ocupan la suma de comprobación, el número de secuencia y el identificador?
+
+        Este apartado extiende la explicación dada en la pregunta 3.
+
+        Respecto a los campos de los paquetes ICMP son los siguientes:
+          -------- TIPO ( 1 byte ) --------
+          - type -> 0 por Echo reply
+          -------- CÓDIGO ( 1 byte ) --------
+          - code -> 0 por Echo reply
+          -------- SUMA DE COMPROBACIÓN ( 2 bytes ) --------
+          - checksum -> [número] [correcto/fallido]
+          + estatus de comprobación
+          -------- IDENTIFICADOR ( 2 bytes ) --------
+          - Identifyer (BE) [numero] parte 1
+          - Identifyer (LE) [numero] parte 2
+          -------- NUMERO DE SECUENCIA ( 2 bytes ) --------
+          - Sequence num (BE) [numero] parte 1
+          - Sequence num (LE) [numero] parte 2
+          + marco de respuesta
+          -------- SECCIÓN DE DATOS ( 4 bytes ) --------
+          - Timestamp from icmp data: datos de la estampa de tiempo (fecha)
+          + tiempo necesitado
+          - Data (datos de relleno)
+
+
+PREGUNTAs PASO 2 ( Estudio de los mensajes ICMP asociados al comando traceroute)
+
+
+  1 - ¿Cuál es la dirección IP de su nodo? ¿Y la del nodo destino?
+      
+      La dirección IP de mi nodo, que es el host emisor, va cambiando en función del TTL
+      ya que va alcanzando un extremo distinto según incrementa el valor del TTL.
+      Por otro lado la del nodo destino 192.168.1.87.
+  
+
+  2 - Explique la utilidad que tiene el campo TTL de la cabecera IP. 
+      El campo TTL nos permite definir un número máximo de nodos por el que navegar, evitando
+      así que el paquete quede sin rumbo y de manera infinita rondando por internet. 
+      Esto ocuparía todo el ancho de banda.
+  
+
+  3 - ¿Cuál es el contenido de los paquetes enviados por traceroute? Examine la cabecera IP
+      de estos paquetes. ¿Cuál es el valor del campo de protocolo? ¿Por qué?
+
+      El valor del campo de protocolo es el ICMP,  ya que el comando traceroute provoca que el TTL
+      vaya llegando al valor 0 según alcanza los distintos router que intermedian la red para trazar
+      la ruta que hay entre el host emisor y el destino. Cuando el TTL alcanza el valor 0, se emite
+      un mensaje ICMP TTL exceeded hasta alcanzar el destino, donde el mensaje ICMP 
+      cambia a Port unreachable.
+
+      Cabe destacar que en la sección de datso hay escrito "SU PERMAN".
+
+  4 - Examine los mensajes ICMP devueltos por los routers. ¿Qué información nueva se incluye en estos paquetes?
+
+        Se incluye el tiempo de respuesta
+
+  5 - Examine los paquetes ICMP recibidos desde el nodo final al que hacemostraceroute. ¿En que difieren estos
+      paquetes de los mensajes devueltos por los routers? ¿Por qué son diferentes?
+
+        Los paquetes recibidos desde el nodo final difieren en el tipo de mensaje ICMP, siendo estos de 
+        Destination unreachable, ya que hemos alcanzado el nodo destino pero no podemos acceder al puerto
+        solicitado.
+
+PREGUNTAs PASO 3 ( Estudio de la cabecera IP y la fragmentación)
+
+  
+  · Aspectos relacionados con la cabecera IP
+
+
+    1 - Seleccione el primer mensaje paquete por el programa traceroute desde su ordenador
+        y expanda la información relativa al protocolo IP.  
+        ¿Cuál es la dirección IP de su ordenador?
+        La dirección IP de mi ordenador, que es la de la fuente, es 192.168.1.87
+
+    2 - En la cabecera de paquete, ¿Cuál es el valor del campo protocolo de nivel superior?
+        El valor del protocolo superior es 17 que corresponde al protocolo UDP
+
+    3 - ¿Cuántos bytes hay en la cabecera IP? ¿Cuántos bytes hay en el payload del datagrama IP?
+        Explique cómo determinó el numero de bytes del payload (carga útil).
+        
+        según el wireshark, el paquete capturado tiene una cabecera de 20 bytes, tal y como lo 
+        muestra el campo IHL. Por otro lado el datagrama IP ocupa 30 bytes, ya que la longitud
+        total, tal y como indica el campo Total Length, es 50 incluyendo la cabecera. Si se
+        restan los 20 de cabecera, se obtiene la longitud del payload.
+
+
+    4 - ¿Se ha segmentado este datagrama? Explique como determinó la respuesta.
+
+        No, el datagrama no se ha fragmentado. Esta información viene dada por el campo de flags
+        de la cabecera IP. No solamente se indica que no se fragmenta (More fragments: not set), 
+        tampoco existe un offset de fragmento, por lo que al no haber desplazamiento no hay
+        fragmentación.
+
+
+    5 - Observe cómo en cada paquete enviado el campo de identificación es distinto.
+
+        Con los paquetes ordenados por dirección de origen encuentre las respuestas 
+        ICMP, de TTL excedido, recibidas por su ordenador.
+
+
+    6 - ¿Cuál es el valor en el campo de identificación y del TTL? ¿Cuál es el patrón
+        que se observa? Compruebe si el valor del TTL está relacionado con el orden  
+        en el que aparecen las direcciones IP de los routers en la salida del comando
+        traceroute.
+
+        El valor del campo de identificación del primer paquete es 0x98ef. El patrón 
+        observado es que por cada paquete se incrementa una unidad el identificador
+
+  · Fragmentación de paquetes IP.  
+
+
+    7 - Encuentre el primer UDP enviado por traceroute después de cambiar el tamaño de
+        paquete a 2000 ¿se ha fragmentado este mensaje en más de un datagrama IP?
+
+        Si se ha fragmentado, en dos paquetes contiguos, uno de 1500 Bytes y otro de 
+        500 bytes
+
+        No se ha fragmentado ¿?
+
+    8 - Revise el primer fragmento. ¿Qué parte de la cabecera indica que el datagrama 
+        ha sido fragmentado? ¿Qué información en la cabecera distingue al primer 
+        fragmento de los fragmentos siguientes? ¿Qué tamaño tiene este datagrama IP?  
+
+        La parte de la cabecera que indica que el datagrama se ha fragmentado es la 
+        parte de flags, el flag "Don't fragment" tiene valor "set" y la propia parte 
+        de la cabecera indica que hay más fragmentos. 
+
+       
+
+
+
+    9 - Revise el segundo fragmento ¿Qué información en la cabecera indica que no es el
+        primer fragmento? ¿Hay más fragmentos? ¿Cómo lo sabe? 
+
+        La información que revela que no es el primer fragmento es su offset, ya que este 
+        indica cuan separado está del primer fragmento. si fuera el primero tendría un 
+        offset 0.
+
+        No, no hay más fragmentos para ese paquete, porque el segundo fragmento no está
+        fragmentado tal y como lo indica la sección de flag de la cabecera.
+
+    10 - ¿Qué campos de la cabecera IP cambian entre el primer y el segundo fragmento?
+         Observe los campos de identificación de amdos fragmentos. Fíjese también en
+         los flags.
+
+        El primer fragmento se ditingue en la cabecera por el tamaño total del datagrama,
+        que es mayor. Además de que el flag indica que está fragmentado y que no tiene un
+        ofset, ya que esta característica es tomada por el fragmento siguiente. Por el 
+        resto de apartados son idénticos. Este datagrama IP tiene un tamaño de 1500 bytes
+
+    11 - ¿Cuántos fragmentos se crearon a partir del datagrama original?
+
+          Se crearon tres fragmentos a partir del datagrama original
+
+    12 - ¿Qué diferencias hay en la cabecera IP de los distintos fragmentos? Observe
+         los campos de identificación de ambos fragmentos. Fíjese también en los flags.    
+
+         Las diferencias entre los tres fragmentos se pueden resumir a que tanto el
+         primero como el segundo tienen el flag de "More fragments" con valor set, 
+         sin embargo el tercero, al no fragmentarle tiene valor Not set. Por otro 
+         lado el valor del Fragment offset varía. El primer fragmento tiene un offset 
+         de 0 ya que se hace a partir de este, consecutivamente el segundo y el 
+         tercero aumentan su offset conforme se alejan del primero. Además, como es 
+         obvio la longitud total varía para adecuarse a los 1500 que caben por la 
+         banda, el primer y segundo fragmento presentan un Total length de 1500, 
+         mientras que el tercero tiene un valor de 500.

@@ -5,7 +5,7 @@
 
 
 ![Eth portada](images/ethernet.png "cable ethernet a modo de portada")
->>>>>>>>>>>>>>>Imagen del cable RJ45, icono de este protocolo 
+>Imagen del cable RJ45, icono de este protocolo 
 
 
 ### PROTOCOLO ETHERNET
@@ -39,7 +39,7 @@
 
 
 ![Eth TRAMA](images/Trama.png "Imagen de la trama Ethernet")
->>>>>>>>>>>>>>>Imagen que expresa la trama Ethernet.
+>Imagen que expresa la trama Ethernet.
 
 
 Dependiendo del estandar de Ethernet empleado el marco puede variar.
@@ -70,7 +70,7 @@ en formato hexadecimal para expresar la cadena de bits que constituye
 la trama.
 
 ![GET request](images/GET-request.jpg "Esquema de una petición GET con su respuesta")
->>>>>>>>>>>>>>>Esquema de una comunicación cliente-servidor.
+>Esquema de una comunicación cliente-servidor.
 
 
 **El campo *frame type*** indica el tipo de frame del paquete que se ha 
@@ -156,7 +156,7 @@ atender sus solicitudes de enlace:
 
 
 ![paquete-arp](images/arp-packet.jpg "Diagrama de un paquete de solicitud/respuesta ARP")
->>>>>>>>>>>>>>> Se muestra un diagrama de la estructura de un paquete ARP
+> Se muestra un diagrama de la estructura de un paquete ARP
 
 
 Cada uno de los campos son empleados para la correcta conexión entre dos puntos

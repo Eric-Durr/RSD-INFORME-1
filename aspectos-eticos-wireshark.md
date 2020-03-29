@@ -3,7 +3,7 @@
     utilizado para la obtención de paquetes y el análisis de protocolos.
 
 ![Wireshark](images/wireshark.png "Wireshark")
->>>>>>>>>>>>>Logo de Wireshark
+>Logo de Wireshark
 
 **Reflexion etica**
 
@@ -31,7 +31,7 @@ académico, cuestiones de mantenimiento, trabajo sobre las redes y el análisis 
 de forma profesional es algo que puede causar muchos problemas y dificultades.
 
 ![Etica](images/etica.png "Representacion de la etica")
->>>>>>>>>>>>>Representación de la ética
+>Representación de la ética
 
 Cada persona es libre de hacer lo que crea conveniente y tendrá un criterio diferente sobre 
 lo que es éticamente correcto hacer o no, de lo que se puede usar, escuchar, y de hasta dónde 

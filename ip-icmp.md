@@ -5,7 +5,7 @@
       Ambos protocolos se encuentran en la capa de red.
 
 ![IP portada](images/ip.webp "Portada IP")
->>>>>>>>>>>>>>>Portada del Protocolo IP
+>Portada del Protocolo IP
 
 ### Protocolo IP (Internet Protocol)
 
@@ -34,7 +34,7 @@ Cada datagrama IP contiene:
 **Cabecera**
 
 ![IP cabecera](images/Tabla1.png "Portada IP")
->>>>>>>>>>>>>>>Cabecera de un datagrama del protocolo
+>Cabecera de un datagrama del protocolo
 
 La cabecera tiene 20 bytes de longitud, es decir, 5 palabras, donde se encuentran diferentes campos, como:
 
@@ -90,7 +90,7 @@ Las cabeceras de estos mensajes son bastante sencillos, solamente tienen 3 campo
 
 
 ![Campo Tipo](images/Tabla3.png "Campo Tipo")
->>>>>>>>>>>Campo Tipo y significados
+>Campo Tipo y significados
 
 **Comandos Ping y Traceroute**
 

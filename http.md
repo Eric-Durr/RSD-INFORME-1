@@ -15,7 +15,7 @@
     donde se transfiere la información que requiere el navegador para mostrar 
     una página por pantalla. 
 
-> Aunque el ejemplo más sencillo sea el navegador tambien sirve a otro tipo de 
+> Aunque el ejemplo más sencillo sea el navegador también sirve a otro tipo de 
 > aplicaciones y programas.
 
     Por lo general se emiten dos grupos de datos. El propio 
@@ -57,7 +57,7 @@ Los tipos de operaciones HTTP más comunes son:
 **Las peticiones** tienen una estructura de mensaje distinta a la de las respuestas. Se componen 
 por el tipo de petición, el path o ruta a la que se aplica, la versión del protocolo y luego 
 la serie de cabeceras que componen los metadatos del mensaje. Esta última sección se reemplaza
-por el cuerpo del mensaje cuando la petición lol requiere (POST, PUT, etc.)
+por el cuerpo del mensaje cuando la petición lo requiere (POST, PUT, etc.)
 
 *Tal y como se observa en la imagen siquiente:*
 ![http request image](HTTP_Request.png "Esquema descriptivo de una petición HTTP")
@@ -106,16 +106,16 @@ PC :arrow_right:PETICIÓN AL DOMINIO:arrow_right:PETICIÓN AL SERVIDOR DNS:arrow
 
 <br>
 Cabe destacar que el navegador suele proporcionar una información bastante detallada.
-Esto durante la práctica se ha observado sobre todo en el análisis de los header de las
+Durante la práctica se ha observado, sobre todo, en el análisis de los header de las
 peticiones que proporcionan información relevante a la versión HTTP empleada por el 
 navegador o el lenguaje que usa, del mismo modo que también ilustra la dirección IP origen
 y la destino o el lenguaje que usa el sitio. 
 
-También la información puede indicar datos relativos a pas peticiones ejecutadas así como su fecha de modificación o ejecución. Inclusive se puede ahondar en el estado recibido.
+También la información puede indicar datos relativos a las peticiones ejecutadas así como su fecha de modificación o ejecución. Inclusive se puede ahondar en el estado recibido.
 
 
 Muchas veces, también se puede apreciar como las peticiones son requeridas pero omitidas, más
-aún en el acceso a sitios web recientes. EEsto se puede deber a que los archivos, HTML entre 
+aún en el acceso a sitios web recientes. Esto se puede deber a que los archivos, HTML entre 
 otros, ya han sido guardados en una caché. Esto se emplea para facilitar y agilizar la carga de datos.
 
 *Toda esta información se suele observar en esta herramienta del buscador:*

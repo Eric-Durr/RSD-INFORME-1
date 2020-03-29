@@ -1,5 +1,5 @@
 ## Protocolo UDP y TCP
-    En este apartado se hablara sobre los protocolos UDP y TCP.
+    En este apartado se hablará sobre los protocolos UDP y TCP.
     Se hablará sobre la estructura y funciones generales de UDP y TCP.
     Tambien se comentará el cierre TCP y el funcionamiento ACK en TCP.
 
@@ -8,16 +8,16 @@
 
 ### Protocolo UDP (User Datagram Protocol)
 
-**Introduccion**
+**Introducción**
 
 El protocolo UDP es un protocolo de la capa de transporte, por lo que trabaja con segmentos.
-Este protocolo se limita a proporcionar las cosas minimas que la capa de transporte debe realizar. Su
+Este protocolo se limita a proporcionar las cosas mínimas que la capa de transporte debe realizar. Su
 principal funcionalidad es pasar los mensajes de la capa de transporte a la de red, y los datagramas de
 la capa de red a la de transporte.
 
 Propiedades de UDP:
-> * Incluye deteccion de errores
-> * Si se utiliza UDP, la aplicacion se comunica casi directamente con el protocolo IP
+> * Incluye detección de errores
+> * Si se utiliza UDP, la aplicación se comunica casi directamente con el protocolo IP
 
 **Caracteristicas de UDP**
 
@@ -61,7 +61,7 @@ de comprobación.
 
 ### Protocolo TCP (Transmission Control Protocol)
 
-**Introduccion**
+**Introducción**
 
 El protocolo TCP es uno de los protocolos más usados en Internet. Forma parte de la
 capa de transporte. Los principales servicios que ofrece son de comunicación
@@ -94,7 +94,7 @@ número de secuencia que el emisor del segmento espera recibir.
 > * Longitud encabezado TCP: Especifica el tamaño de la cabecera en
 palabras de 32 bits.
 > * Reservado: Se deja para uso futuro, debe estar a 0.
-> * Flags: Se emplean para diferentes variables como SYN,FIN,RSt,ACK...
+> * Flags: Se emplean para diferentes variables como SYN, FIN, RSt, ACK, etc...
 > * Tamaño de ventana: Tamaño de la ventana de recepción que especifica el
 número máximo de bytes que pueden ser introducidos en el buffer.
 > * Suma de verificación: Utilizado para la comprobación de errores tanto en
@@ -108,7 +108,7 @@ Para poder proporcionar una transferencia de datos fiables, TCP usa los campos �
 > * La forma en que esto funciona es la siguiente:
 
 Cuando el protocolo TCP inicia la conexión, este observara el flujo de datos de
-comunicación como un conjunto de bytes desordenador. Por lo que no va a ver la comunicación como un envío de paquetes sino como un envío de bytes. 
+comunicación como un conjunto de bytes desordenados. Por lo que no va a ver la comunicación como un envío de paquetes sino como un envío de bytes. 
 
  * Por tanto, cada paquete va a tener en el campo “Número de secuencia” el número del primer byte del segmento dentro de todo el flujo de bytes de la comunicación. 
 
